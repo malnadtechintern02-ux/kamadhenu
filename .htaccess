@@ -1,0 +1,101 @@
+# ============================================================
+# Kamadenu Goushala – Apache Configuration
+# ============================================================
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Force HTTPS (uncomment in production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Clean URLs – SEO-friendly routing
+# News article: /news/slug -> news-details.php?slug=slug
+RewriteRule ^news/([a-zA-Z0-9\-]+)$ news-details.php?slug=$1 [L,QSA]
+
+# Event: /events/slug -> event-details.php?slug=slug
+RewriteRule ^events/([a-zA-Z0-9\-]+)$ event-details.php?slug=$1 [L,QSA]
+
+# Breed: /breeds/slug -> breed-details.php?slug=slug
+RewriteRule ^breeds/([a-zA-Z0-9\-]+)$ breed-details.php?slug=$1 [L,QSA]
+
+# Cow: /cow/id -> cow-details.php?id=id
+RewriteRule ^cow/([0-9]+)$ cow-details.php?id=$1 [L,QSA]
+
+# Product: /products/slug -> product-details.php?slug=slug
+RewriteRule ^products/([a-zA-Z0-9\-]+)$ product-details.php?slug=$1 [L,QSA]
+
+# ── Security Headers ───────────────────────────────────────
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Clickjacking protection
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── Block Access to Sensitive Files ─────────────────────────
+<FilesMatch "\.(sql|log|env|md|json|yml|yaml)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to config directory
+<IfModule mod_rewrite.c>
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^logs/ - [F,L]
+    RewriteRule ^database/ - [F,L]
+</IfModule>
+
+# ── Custom Error Pages ──────────────────────────────────────
+ErrorDocument 404 /kamadhenu/404.php
+ErrorDocument 403 /kamadhenu/403.php
+ErrorDocument 500 /kamadhenu/500.php
+
+# ── Compression ─────────────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript
+    AddOutputFilterByType DEFLATE text/xml application/xml application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Browser Caching ─────────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-font-woff2 "access plus 1 month"
+</IfModule>
+
+# ── File Upload Limits ──────────────────────────────────────
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 12M
+    php_value max_execution_time 60
+</IfModule>
+
+# ── Prevent Directory Listing ───────────────────────────────
+Options -Indexes
+
+# ── Default Character Set ───────────────────────────────────
+AddDefaultCharset utf-8

@@ -1,0 +1,33 @@
+[20-Aug-2026 09:46:19 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function isAdminLoggedIn() in C:\xampp\htdocs\kamadhenu\admin\login.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\admin\login.php on line 11
+[20-Aug-2026 09:53:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function isAdminLoggedIn() in C:\xampp\htdocs\kamadhenu\admin\login.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\admin\login.php on line 11
+[20-Aug-2026 10:00:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function isAdminLoggedIn() in C:\xampp\htdocs\kamadhenu\admin\login.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\admin\login.php on line 11
+[20-Aug-2026 10:00:27 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function isAdminLoggedIn() in C:\xampp\htdocs\kamadhenu\admin\login.php:11
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\admin\login.php on line 11
+[20-Aug-2026 11:43:02 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[20-Aug-2026 11:43:14 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 11:44:29 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: e(): Argument #1 ($value) must be of type string, null given, called in C:\xampp\htdocs\kamadhenu\admin\event-form.php on line 155 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:10
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\event-form.php(155): e(NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 10
+[20-Aug-2026 12:16:02 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: getIntParam(): Argument #2 ($default) must be of type int, string given, called in C:\xampp\htdocs\kamadhenu\admin\product-form.php on line 43 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:322
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\product-form.php(43): getIntParam('category_id', 'POST')
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 322
+[20-Aug-2026 12:16:40 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: getIntParam(): Argument #2 ($default) must be of type int, string given, called in C:\xampp\htdocs\kamadhenu\admin\product-form.php on line 43 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:322
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\product-form.php(43): getIntParam('category_id', 'POST')
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 322

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF5"/>
+      <stop offset="100%" stop-color="#FFF8E1"/>
+    </linearGradient>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad4)"/>
+
+  <!-- Bottle shadow -->
+  <ellipse cx="400" cy="480" rx="90" ry="25" fill="#E0E0E0"/>
+
+  <!-- Glass Bottle -->
+  <g transform="translate(400, 310)">
+    <!-- Main Bottle Body -->
+    <rect x="-70" y="-100" width="140" height="260" rx="20" fill="none" stroke="#B0BEC5" stroke-width="4"/>
+    <!-- Liquid Content -->
+    <rect x="-66" y="-30" width="132" height="186" rx="10" fill="url(#liquidGrad)" opacity="0.85"/>
+    <!-- Bottle Neck -->
+    <rect x="-25" y="-150" width="50" height="50" fill="none" stroke="#B0BEC5" stroke-width="4"/>
+    <!-- Cap -->
+    <rect x="-30" y="-170" width="60" height="25" rx="5" fill="#2E7D32"/>
+
+    <!-- Label -->
+    <rect x="-60" y="-10" width="120" height="120" rx="8" fill="#FFFFFF" stroke="#C8A951" stroke-width="2"/>
+    <text x="0" y="15" font-family="'Inter', sans-serif" font-weight="bold" font-size="14" fill="#1B5E20" text-anchor="middle">GOMUTRA ARK</text>
+    <text x="0" y="35" font-family="'Inter', sans-serif" font-weight="600" font-size="11" fill="#5D4037" text-anchor="middle">Pure Distilled A2</text>
+    <circle cx="0" cy="65" r="18" fill="#E8F5E9"/>
+    <path d="M 0 52 C -8 60 0 74 0 74 C 0 74 8 60 0 52 Z" fill="#2E7D32"/>
+    <text x="0" y="98" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" fill="#C8A951" text-anchor="middle">500 ML</text>
+  </g>
+
+  <!-- Header Banner -->
+  <rect x="180" y="50" width="440" height="60" rx="30" fill="#1B5E20" />
+  <text x="400" y="88" font-family="'Inter', sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" text-anchor="middle">ORGANIC GOMUTRA ARK (500ML)</text>
+</svg>

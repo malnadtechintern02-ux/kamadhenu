@@ -1,0 +1,197 @@
+<?php
+/**
+ * Contact Page
+ * Kamadenu Goushala
+ */
+
+define('BASE_PATH', __DIR__);
+require_once BASE_PATH . '/config/config.php';
+require_once BASE_PATH . '/includes/validation.php';
+
+$seo = [
+    'title' => 'Contact Us',
+    'description' => 'Get in touch with Kamadhenu Goushala. Visit us, call, email, or send a message. We are located in Kavadi, Virajpet Taluk, Kodagu, Karnataka.',
+];
+
+// Handle form submission
+$errors = [];
+$formData = ['name' => '', 'email' => '', 'phone' => '', 'subject' => '', 'message' => ''];
+
+if (isPost()) {
+    requireCsrfToken();
+    
+    $formData = [
+        'name'    => getParam('name', '', 'POST'),
+        'email'   => getParam('email', '', 'POST'),
+        'phone'   => getParam('phone', '', 'POST'),
+        'subject' => getParam('subject', '', 'POST'),
+        'message' => getParam('message', '', 'POST'),
+    ];
+    
+    $validator = new Validator($formData);
+    $validator->required('name', 'Name')
+              ->required('email', 'Email')
+              ->email('email')
+              ->required('subject', 'Subject')
+              ->required('message', 'Message')
+              ->minLength('message', 10, 'Message')
+              ->maxLength('message', 2000, 'Message')
+              ->phone('phone');
+    
+    if ($validator->passes()) {
+        $inserted = dbInsert('contact_messages', [
+            'name'    => $formData['name'],
+            'email'   => $formData['email'],
+            'phone'   => $formData['phone'],
+            'subject' => $formData['subject'],
+            'message' => $formData['message'],
+        ]);
+        
+        if ($inserted) {
+            setFlash('success', 'Thank you for your message! We will get back to you soon.');
+            redirect(SITE_URL . '/contact.php');
+        } else {
+            setFlash('error', 'Something went wrong. Please try again later.');
+        }
+    } else {
+        $errors = $validator->getErrors();
+    }
+}
+
+$phone = getSetting('phone', '[PHONE NUMBER]');
+$email = getSetting('email', '[EMAIL ADDRESS]');
+$address = getSetting('address', '[GOUSHALA ADDRESS]');
+$whatsapp = getSetting('whatsapp', '');
+$mapsUrl = getSetting('google_maps_url', '');
+
+include BASE_PATH . '/includes/header.php';
+include BASE_PATH . '/includes/navbar.php';
+?>
+
+<section class="page-header">
+    <div class="container">
+        <nav class="breadcrumb-nav" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= SITE_URL ?>/">Home</a></li>
+                <li class="breadcrumb-item active">Contact</li>
+            </ol>
+        </nav>
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out for any questions about Gau Seva.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Info -->
+            <div class="col-lg-5 animate-on-scroll">
+                <h3 class="mb-4">Get In Touch</h3>
+                
+                <div class="d-flex mb-4">
+                    <div class="stat-icon me-3 flex-shrink-0"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <h5 class="mb-1">Visit Us</h5>
+                        <p class="text-muted mb-0"><?= e($address) ?></p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-4">
+                    <div class="stat-icon me-3 flex-shrink-0"><i class="bi bi-telephone-fill"></i></div>
+                    <div>
+                        <h5 class="mb-1">Call Us</h5>
+                        <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $phone)) ?>" class="text-muted"><?= e($phone) ?></a>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-4">
+                    <div class="stat-icon me-3 flex-shrink-0"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <h5 class="mb-1">Email Us</h5>
+                        <a href="mailto:<?= e($email) ?>" class="text-muted"><?= e($email) ?></a>
+                    </div>
+                </div>
+                
+                <?php if ($whatsapp): ?>
+                <div class="d-flex mb-4">
+                    <div class="stat-icon me-3 flex-shrink-0" style="background:#dcf8c6;"><i class="bi bi-whatsapp" style="color:#25D366;"></i></div>
+                    <div>
+                        <h5 class="mb-1">WhatsApp</h5>
+                        <a href="<?= e(getWhatsAppLink('🙏 Namaste, I would like to contact Kamadhenu Goushala.')) ?>" target="_blank" class="text-muted">Chat with us</a>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
+                <!-- Map -->
+                <?php if ($mapsUrl): ?>
+                <div class="mt-4 rounded-4 overflow-hidden shadow-sm">
+                    <iframe src="<?= e($mapsUrl) ?>" width="100%" height="250" style="border:0;" allowfullscreen loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" title="Goushala Location"></iframe>
+                </div>
+                <?php endif; ?>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-7 animate-on-scroll">
+                <div class="card border-0 shadow-sm rounded-4 p-4">
+                    <h3 class="mb-3">Send a Message</h3>
+                    <p class="text-muted mb-4">Fill out the form below and we'll respond as soon as possible.</p>
+                    
+                    <form method="POST" action="" class="needs-validation" novalidate id="contactForm">
+                        <?= csrfField() ?>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control <?= isset($errors['name']) ? 'is-invalid' : '' ?>" 
+                                       id="name" name="name" value="<?= e($formData['name']) ?>" required>
+                                <?php if (isset($errors['name'])): ?>
+                                <div class="invalid-feedback"><?= e($errors['name']) ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>" 
+                                       id="email" name="email" value="<?= e($formData['email']) ?>" required>
+                                <?php if (isset($errors['email'])): ?>
+                                <div class="invalid-feedback"><?= e($errors['email']) ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control <?= isset($errors['phone']) ? 'is-invalid' : '' ?>" 
+                                       id="phone" name="phone" value="<?= e($formData['phone']) ?>">
+                                <?php if (isset($errors['phone'])): ?>
+                                <div class="invalid-feedback"><?= e($errors['phone']) ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control <?= isset($errors['subject']) ? 'is-invalid' : '' ?>" 
+                                       id="subject" name="subject" value="<?= e($formData['subject']) ?>" required>
+                                <?php if (isset($errors['subject'])): ?>
+                                <div class="invalid-feedback"><?= e($errors['subject']) ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                                <textarea class="form-control <?= isset($errors['message']) ? 'is-invalid' : '' ?>" 
+                                          id="message" name="message" rows="5" required><?= e($formData['message']) ?></textarea>
+                                <?php if (isset($errors['message'])): ?>
+                                <div class="invalid-feedback"><?= e($errors['message']) ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-custom btn-lg">
+                                    <i class="bi bi-send me-1"></i> Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php include BASE_PATH . '/includes/footer.php'; ?>
