@@ -39,8 +39,8 @@ if (isPost()) {
     $testimonial['designation'] = getParam('designation', '', 'POST');
     $testimonial['location'] = getParam('location', '', 'POST');
     $testimonial['message'] = getParam('message', '', 'POST');
-    $testimonial['rating'] = getIntParam('rating', 'POST') ?: 5;
-    $testimonial['sort_order'] = getIntParam('sort_order', 'POST');
+    $testimonial['rating'] = getIntParam('rating', 0, 'POST') ?: 5;
+    $testimonial['sort_order'] = getIntParam('sort_order', 0, 'POST');
     $testimonial['is_active'] = isset($_POST['is_active']) ? 1 : 0;
 
     $validator = new Validator($testimonial);

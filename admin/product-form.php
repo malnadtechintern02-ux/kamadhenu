@@ -40,7 +40,7 @@ if (isPost()) {
     
     $product['name'] = getParam('name', '', 'POST');
     $product['slug'] = getParam('slug', '', 'POST') ?: slugify($product['name']);
-    $product['category_id'] = getIntParam('category_id', 'POST');
+    $product['category_id'] = getIntParam('category_id', 0, 'POST');
     $product['price'] = (float)getParam('price', 0, 'POST');
     $product['description'] = getParam('description', '', 'POST');
     $product['stock_status'] = getParam('stock_status', 'In Stock', 'POST');

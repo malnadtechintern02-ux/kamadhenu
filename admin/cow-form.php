@@ -42,7 +42,7 @@ if (isPost()) {
     requireCsrfToken();
     
     $cow['name'] = getParam('name', '', 'POST');
-    $cow['breed_id'] = getIntParam('breed_id', 'POST');
+    $cow['breed_id'] = getIntParam('breed_id', 0, 'POST');
     $cow['date_of_birth'] = getParam('date_of_birth', '', 'POST');
     $cow['gender'] = getParam('gender', 'Female', 'POST');
     $cow['status'] = getParam('status', 'Available', 'POST');

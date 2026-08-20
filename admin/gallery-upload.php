@@ -16,10 +16,10 @@ $errors = [];
 if (isPost()) {
     requireCsrfToken();
     
-    $categoryId = getIntParam('category_id', 'POST');
+    $categoryId = getIntParam('category_id', 0, 'POST');
     $caption = getParam('caption', '', 'POST');
     $altText = getParam('alt_text', '', 'POST');
-    $sortOrder = getIntParam('sort_order', 'POST');
+    $sortOrder = getIntParam('sort_order', 0, 'POST');
     $isActive = isset($_POST['is_active']) ? 1 : 0;
 
     if (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {

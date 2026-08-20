@@ -31,3 +31,58 @@ Stack trace:
 #0 C:\xampp\htdocs\kamadhenu\admin\product-form.php(43): getIntParam('category_id', 'POST')
 #1 {main}
   thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 322
+[20-Aug-2026 12:46:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: getIntParam(): Argument #2 ($default) must be of type int, string given, called in C:\xampp\htdocs\kamadhenu\admin\product-form.php on line 43 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:322
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\product-form.php(43): getIntParam('category_id', 'POST')
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 322
+[20-Aug-2026 12:47:03 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: getIntParam(): Argument #2 ($default) must be of type int, string given, called in C:\xampp\htdocs\kamadhenu\admin\product-form.php on line 43 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:322
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\product-form.php(43): getIntParam('category_id', 'POST')
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 322
+[20-Aug-2026 12:49:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function uploadFile() in C:\xampp\htdocs\kamadhenu\admin\product-form.php:57
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\admin\product-form.php on line 57
+[20-Aug-2026 12:49:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function uploadFile() in C:\xampp\htdocs\kamadhenu\admin\product-form.php:57
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\admin\product-form.php on line 57
+[20-Aug-2026 13:01:00 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: e(): Argument #1 ($value) must be of type string, null given, called in C:\xampp\htdocs\kamadhenu\admin\event-form.php on line 155 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:10
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\event-form.php(155): e(NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 10
+[20-Aug-2026 13:01:16 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: e(): Argument #1 ($value) must be of type string, null given, called in C:\xampp\htdocs\kamadhenu\admin\event-form.php on line 155 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:10
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\event-form.php(155): e(NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 10
+[20-Aug-2026 13:01:32 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: e(): Argument #1 ($value) must be of type string, null given, called in C:\xampp\htdocs\kamadhenu\admin\event-form.php on line 155 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:10
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\event-form.php(155): e(NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 10
+[20-Aug-2026 13:01:53 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: e(): Argument #1 ($value) must be of type string, null given, called in C:\xampp\htdocs\kamadhenu\admin\event-form.php on line 155 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:10
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\event-form.php(155): e(NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 10
+[20-Aug-2026 13:02:12 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:04:00 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:06:40 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:08:30 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:08:34 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:08:40 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:09:51 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.adoptions a left join cows c on a.cow_id = c.id' doesn't exist
+[20-Aug-2026 13:10:17 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:10:21 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:10:31 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:10:37 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:10:38 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[20-Aug-2026 13:10:39 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: e(): Argument #1 ($value) must be of type string, null given, called in C:\xampp\htdocs\kamadhenu\admin\event-form.php on line 155 and defined in C:\xampp\htdocs\kamadhenu\includes\functions.php:10
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\admin\event-form.php(155): e(NULL)
+#1 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\includes\functions.php on line 10

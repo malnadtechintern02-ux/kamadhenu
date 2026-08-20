@@ -319,7 +319,11 @@ function getParam(string $key, string $default = '', string $method = 'GET'): st
 /**
  * Get an integer parameter
  */
-function getIntParam(string $key, int $default = 0, string $method = 'GET'): int {
+function getIntParam(string $key, int|string $default = 0, string $method = 'GET'): int {
+    if (is_string($default) && in_array(strtoupper($default), ['GET', 'POST', 'REQUEST'], true)) {
+        $method = strtoupper($default);
+        $default = 0;
+    }
     return (int)getParam($key, (string)$default, $method);
 }
 

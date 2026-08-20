@@ -43,7 +43,7 @@ if (isPost()) {
     
     $article['title'] = getParam('title', '', 'POST');
     $article['slug'] = getParam('slug', '', 'POST') ?: slugify($article['title']);
-    $article['category_id'] = getIntParam('category_id', 'POST');
+    $article['category_id'] = getIntParam('category_id', 0, 'POST');
     $article['short_description'] = getParam('short_description', '', 'POST');
     $article['content'] = $_POST['content'] ?? '';
     $article['author'] = getParam('author', 'Kamadenu Goushala', 'POST');

@@ -44,7 +44,7 @@ if (isPost()) {
     $breed['description'] = getParam('description', '', 'POST');
     $breed['milk_quality'] = getParam('milk_quality', '', 'POST');
     $breed['characteristics'] = getParam('characteristics', '', 'POST');
-    $breed['sort_order'] = getIntParam('sort_order', 'POST');
+    $breed['sort_order'] = getIntParam('sort_order', 0, 'POST');
     $breed['is_active'] = isset($_POST['is_active']) ? 1 : 0;
 
     $validator = new Validator($breed);

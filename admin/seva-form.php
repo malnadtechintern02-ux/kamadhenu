@@ -46,7 +46,7 @@ if (isPost()) {
     $seva['description'] = getParam('description', '', 'POST');
     $seva['suggested_amounts'] = getParam('suggested_amounts', '', 'POST');
     $seva['benefits'] = getParam('benefits', '', 'POST');
-    $seva['sort_order'] = getIntParam('sort_order', 'POST');
+    $seva['sort_order'] = getIntParam('sort_order', 0, 'POST');
     $seva['is_active'] = isset($_POST['is_active']) ? 1 : 0;
 
     $validator = new Validator($seva);

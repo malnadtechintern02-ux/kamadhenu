@@ -5,6 +5,75 @@
  */
 
 /**
+ * Direct file upload function matching admin forms expectations
+ * 
+ * @param array  $file        Sub-array from $_FILES (e.g. $_FILES['image'])
+ * @param string $uploadDir   Subdirectory in uploads folder
+ * @param array  $allowedTypes MIME types allowed
+ * @param int    $maxSize     Max file size limit in bytes
+ * @return array ['success' => bool, 'filename' => string|null, 'message' => string|null, 'error' => string|null]
+ */
+function uploadFile(array $file, string $uploadDir, array $allowedTypes = [], int $maxSize = 5242880): array {
+    if (!isset($file['error']) || $file['error'] === UPLOAD_ERR_NO_FILE) {
+        return ['success' => false, 'filename' => null, 'message' => 'No file uploaded.', 'error' => 'No file uploaded.'];
+    }
+    
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        $errorMessages = [
+            UPLOAD_ERR_INI_SIZE   => 'File exceeds server upload limit.',
+            UPLOAD_ERR_FORM_SIZE  => 'File exceeds form upload limit.',
+            UPLOAD_ERR_PARTIAL    => 'File was only partially uploaded.',
+            UPLOAD_ERR_NO_TMP_DIR => 'Server configuration error (no temp directory).',
+            UPLOAD_ERR_CANT_WRITE => 'Failed to write file to disk.',
+            UPLOAD_ERR_EXTENSION  => 'Upload blocked by server extension.',
+        ];
+        $msg = $errorMessages[$file['error']] ?? 'Unknown upload error.';
+        return ['success' => false, 'filename' => null, 'message' => $msg, 'error' => $msg];
+    }
+    
+    if ($file['size'] > $maxSize) {
+        $maxMB = round($maxSize / 1024 / 1024, 1);
+        $msg = "File size exceeds {$maxMB}MB limit.";
+        return ['success' => false, 'filename' => null, 'message' => $msg, 'error' => $msg];
+    }
+    
+    if (!empty($allowedTypes)) {
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->file($file['tmp_name']);
+        
+        if (!in_array($mimeType, $allowedTypes)) {
+            $msg = 'Invalid file type. Allowed: ' . implode(', ', $allowedTypes);
+            return ['success' => false, 'filename' => null, 'message' => $msg, 'error' => $msg];
+        }
+    }
+    
+    $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    $targetDir = UPLOADS_PATH . '/' . trim($uploadDir, '/');
+    if (!is_dir($targetDir)) {
+        if (!mkdir($targetDir, 0755, true)) {
+            $msg = 'Failed to create upload directory.';
+            return ['success' => false, 'filename' => null, 'message' => $msg, 'error' => $msg];
+        }
+    }
+    
+    $filename = uniqid() . '_' . time() . '.' . $extension;
+    $targetPath = $targetDir . '/' . $filename;
+    
+    if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
+        $msg = 'Failed to save uploaded file.';
+        return ['success' => false, 'filename' => null, 'message' => $msg, 'error' => $msg];
+    }
+    
+    return [
+        'success'  => true,
+        'filename' => $filename,
+        'message'  => null,
+        'error'    => null,
+        'path'     => $uploadDir . '/' . $filename
+    ];
+}
+
+/**
  * Handle a single file upload
  * 
  * @param string $fieldName  Form field name

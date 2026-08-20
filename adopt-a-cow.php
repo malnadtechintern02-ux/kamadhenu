@@ -34,8 +34,8 @@ $monthlyFee = 3000;
 if (isPost()) {
     requireCsrfToken();
     
-    $cowId = getIntParam('cow_id', 'POST') ?: null;
-    $duration = getIntParam('duration_months', 'POST') ?: 12;
+    $cowId = getIntParam('cow_id', 0, 'POST') ?: null;
+    $duration = getIntParam('duration_months', 0, 'POST') ?: 12;
     $totalAmount = $monthlyFee * $duration;
     
     $formData = [
