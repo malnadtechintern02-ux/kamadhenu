@@ -196,46 +196,34 @@ img {
     background: rgba(255, 253, 245, 0.98);
 }
 
-.brand-logo-container {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.site-navbar-logo {
+    height: 52px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+    transition: all var(--transition-fast);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+    display: block;
+}
+
+.navbar-brand:hover .site-navbar-logo {
+    transform: scale(1.03);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.14));
+}
+
+#mainNavbar.scrolled .site-navbar-logo {
+    height: 44px;
+}
+
+.footer-brand-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px;
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-    transition: transform var(--transition-fast);
-}
-
-.navbar-brand:hover .brand-logo-container {
-    transform: scale(1.05);
-}
-
-.brand-logo-svg {
-    width: 100%;
-    height: 100%;
-}
-
-.brand-text-container {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
-}
-
-.brand-title {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--clr-brown);
-    letter-spacing: -0.2px;
-}
-
-.brand-subtitle {
-    font-size: 0.65rem;
-    color: var(--clr-primary-dark);
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
 }
 
 #mainNavbar .nav-link {
@@ -1676,6 +1664,11 @@ img {
         --section-padding: 3rem 0;
     }
     
+    .site-navbar-logo {
+        height: 42px;
+        max-width: 190px;
+    }
+    
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
     
@@ -1709,6 +1702,11 @@ img {
 }
 
 @media (max-width: 575.98px) {
+    .site-navbar-logo {
+        height: 38px;
+        max-width: 165px;
+    }
+
     .hero-title { font-size: 1.75rem; }
     
     .stats-container {

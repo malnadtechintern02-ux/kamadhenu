@@ -66,28 +66,8 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
         <div class="container">
             <!-- Brand Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="<?= SITE_URL ?>/">
-                <div class="brand-logo-container">
-                    <svg class="brand-logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="32" cy="32" r="30" fill="url(#logoGrad)" stroke="#C8A951" stroke-width="2"/>
-                        <!-- Sun rays emblem -->
-                        <path d="M32 8L34 16L32 14L30 16L32 8Z" fill="#FFF8E1"/>
-                        <!-- Sacred Kamadhenu Cow Silhouette / Flower -->
-                        <path d="M32 18C24.27 18 18 24.27 18 32C18 39.73 24.27 46 32 46C39.73 46 46 39.73 46 32C46 24.27 39.73 18 32 18ZM32 42C26.48 42 22 37.52 22 32C22 26.48 26.48 22 32 22C37.52 22 42 26.48 42 32C42 37.52 37.52 42 32 42Z" fill="#FFF8E1" opacity="0.3"/>
-                        <path d="M32 24C28.69 24 26 26.69 26 30C26 34.5 32 40 32 40C32 40 38 34.5 38 30C38 26.69 35.31 24 32 24Z" fill="#E65100"/>
-                        <circle cx="32" cy="29" r="2.5" fill="#FFFDF5"/>
-                        <defs>
-                            <linearGradient id="logoGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#1B5E20"/>
-                                <stop offset="1" stop-color="#2E7D32"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="brand-text-container ms-2">
-                    <span class="brand-title"><?= e($siteName) ?></span>
-                    <span class="brand-subtitle">GAU SEVA &amp; PROTECTION TRUST · KODAGU</span>
-                </div>
+            <a class="navbar-brand d-flex align-items-center" href="<?= SITE_URL ?>/" aria-label="<?= e($siteName) ?>">
+                <img src="<?= ASSETS_URL ?>/images/logo.png" alt="<?= e($siteName) ?>" class="site-navbar-logo">
             </a>
 
             <!-- Mobile Navbar Toggler -->

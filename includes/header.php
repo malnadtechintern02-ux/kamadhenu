@@ -29,7 +29,8 @@ $siteName = getSetting('site_name', 'Kamadenu Goushala');
     <?= renderSeoMeta($seo) ?>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= ASSETS_URL ?>/images/favicon.ico">
+    <link rel="icon" type="image/png" href="<?= ASSETS_URL ?>/images/logo-icon.png">
+    <link rel="apple-touch-icon" href="<?= ASSETS_URL ?>/images/logo-icon.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -41,9 +41,7 @@ $currentYear = date('Y');
             <div class="col-lg-4 col-md-6">
                 <div class="footer-brand">
                     <div class="d-flex align-items-center mb-3">
-                        <div class="logo-icon me-2">
-                            <i class="bi bi-flower2"></i>
-                        </div>
+                        <img src="<?= ASSETS_URL ?>/images/logo-icon.png" alt="<?= e($siteName) ?>" class="footer-brand-logo me-2" width="44" height="44">
                         <h3 class="footer-logo-text"><?= e($siteName) ?></h3>
                     </div>
                     <p class="footer-about-text"><?= e($footerText) ?></p>
