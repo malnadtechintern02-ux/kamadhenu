@@ -45,6 +45,7 @@ $siteName = getSetting('site_name', 'Kamadenu Goushala');
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css">
+<link rel="stylesheet" href="<?= ASSETS_URL ?>/css/animations.css">
     
     <?php foreach ($extraCss as $css): ?>
     <link rel="stylesheet" href="<?= e($css) ?>">

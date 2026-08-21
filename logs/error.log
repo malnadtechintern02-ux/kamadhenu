@@ -105,3 +105,363 @@ Stack trace:
 [21-Aug-2026 08:05:08 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
 [21-Aug-2026 08:05:08 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
 [21-Aug-2026 08:05:08 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[21-Aug-2026 08:31:43 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:43 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:47 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:47 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:51 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:51 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:55 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:55 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:55 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\kamadhenu\admin\index.php on line 15
+[21-Aug-2026 08:31:59 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:31:59 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:03 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:03 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:08 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:08 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:12 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:12 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:16 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:16 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:20 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:20 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:24 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:24 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:28 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:32:28 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:33:42 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:33:46 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:33:50 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:33:54 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:33:58 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:02 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:06 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:10 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:14 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:18 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:22 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:27 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:31 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:35 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:39 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#4 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#7 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#8 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#9 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#12 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#13 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#14 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#17 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#18 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#19 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#22 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#23 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#24 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#25 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#26 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#27 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#28 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#29 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#31 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#32 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#33 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#34 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#35 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#36 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#37 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#38 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#39 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#40 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#41 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#42 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#43 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#44 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#45 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#46 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#47 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#48 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#49 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#50 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#51 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#52 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#53 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#54 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#55 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#56 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#57 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#58 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#59 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#60 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#61 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#62 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#63 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#64 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#65 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#66 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#67 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#68 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#69 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#70 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#71 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#72 C:\xampp\htdocs\kamadhenu\breeds.php(15): dbFetchAll('SELECT * FROM b...')
+#73 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:34:39 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:34:43 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:47 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#4 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#7 C:\xampp\htdocs\kamadhenu\about.php(15): dbFetchAll('SELECT * FROM b...')
+#8 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:34:47 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:34:51 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\index.php(14): getSetting('site_descriptio...', 'Kamadhenu Goush...')
+#4 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:34:51 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:34:55 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:34:59 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:03 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:07 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:11 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:15 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:19 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:24 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:35:28 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#4 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#7 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#8 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#9 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#12 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#13 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#14 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#17 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#18 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#19 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#22 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#23 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#24 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#25 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#26 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#27 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#28 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#29 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#31 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#32 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#33 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#34 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#35 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#36 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#37 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#38 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#39 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#40 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#41 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#42 C:\xampp\htdocs\kamadhenu\about.php(15): dbFetchAll('SELECT * FROM b...')
+#43 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:28 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:32 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#4 C:\xampp\htdocs\kamadhenu\feed-a-cow.php(82): include('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:32 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:36 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#2 C:\xampp\htdocs\kamadhenu\adopt-a-cow.php(17): dbFetchAll('SELECT c.*, b.n...')
+#3 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:36 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:40 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#2 C:\xampp\htdocs\kamadhenu\donate.php(17): dbFetchAll('SELECT * FROM s...')
+#3 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:40 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:44 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#2 C:\xampp\htdocs\kamadhenu\events.php(20): dbFetchAll('SELECT * FROM e...')
+#3 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:44 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:44 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\config.php on line 60
+[21-Aug-2026 08:35:44 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\config.php on line 60
+[21-Aug-2026 08:35:48 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#2 C:\xampp\htdocs\kamadhenu\events.php(20): dbFetchAll('SELECT * FROM e...')
+#3 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:48 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:52 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\includes\functions.php(173): getDB()
+#2 C:\xampp\htdocs\kamadhenu\news.php(17): dbFetchAll('SELECT * FROM n...')
+#3 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:52 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:35:52 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\config.php on line 60
+[21-Aug-2026 08:35:52 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\config.php on line 60
+[21-Aug-2026 08:35:56 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\contact.php(61): getSetting('phone', '[PHONE NUMBER]')
+#4 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:35:56 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:36:07 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:11 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:15 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:20 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:24 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:28 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:32 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:36 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:40 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:44 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:48 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:52 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:36:56 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:37:00 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:37:04 Europe/Berlin] PHP Warning:  Uncaught PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\kamadhenu\config\database.php:41
+Stack trace:
+#0 C:\xampp\htdocs\kamadhenu\config\database.php(41): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#2 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#3 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#4 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#7 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#8 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#9 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#11 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#12 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#13 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#14 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#16 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#17 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#18 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#19 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#20 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#21 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#22 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#23 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#24 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#25 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#26 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#27 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#28 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#29 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#30 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#31 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#32 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#33 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#34 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#35 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#36 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#37 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#38 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#39 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#40 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#41 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#42 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#43 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#44 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#45 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#46 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#47 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#48 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#49 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#50 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#51 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#52 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#53 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#54 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#55 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#56 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#57 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#58 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#59 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#60 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#61 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#62 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#63 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#64 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#65 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#66 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#67 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#68 C:\xampp\htdocs\kamadhenu\includes\header.php(20): getSetting('site_name', 'Kamadenu Gousha...')
+#69 C:\xampp\htdocs\kamadhenu\500.php(17): include('C:\\xampp\\htdocs...')
+#70 C:\xampp\htdocs\kamadhenu\config\database.php(53): include('C:\\xampp\\htdocs...')
+#71 C:\xampp\htdocs\kamadhenu\config\config.php(79): getDB()
+#72 C:\xampp\htdocs\kamadhenu\config\config.php(104): getSiteSettings()
+#73 C:\xampp\htdocs\kamadhenu\contact.php(61): getSetting('phone', '[PHONE NUMBER]')
+#74 {main}
+  thrown in C:\xampp\htdocs\kamadhenu\config\database.php on line 41
+[21-Aug-2026 08:37:04 Europe/Berlin] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\xampp\htdocs\kamadhenu\config\database.php on line 42
+[21-Aug-2026 08:37:55 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:37:55 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:37:59 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:37:59 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:38:03 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:38:03 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:38:07 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 08:38:07 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
