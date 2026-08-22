@@ -47,12 +47,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
         });
 
         animatedElements.forEach(el => observer.observe(el));
+
+        // Auto-stagger siblings within .row containers for cascade effect
+        document.querySelectorAll('.row').forEach(row => {
+            const children = row.querySelectorAll(':scope > .animate-on-scroll, :scope > [class*="col"] > .animate-on-scroll');
+            children.forEach((child, i) => {
+                if (!child.style.transitionDelay) {
+                    child.style.transitionDelay = (i * 0.1) + 's';
+                }
+            });
+        });
     }
+
+    // ── Footer Scroll Animation ───────────────────────────────
+    const footer = document.querySelector('.site-footer');
+    if (footer) {
+        const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    footerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+        footerObserver.observe(footer);
+    }
+
 
     // ── Counter Animation ─────────────────────────────────────
     const counters = document.querySelectorAll('[data-counter]');

@@ -49,16 +49,19 @@ body.admin-body {
     color: var(--clr-dark);
 }
 
-.admin-logo-icon {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-dark));
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    font-size: 1.2rem;
+/* Admin logo image in topbar */
+.admin-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+    transition: transform 0.2s ease;
+}
+
+.admin-brand:hover .admin-logo {
+    transform: scale(1.05);
 }
 
 .admin-avatar {
@@ -86,6 +89,45 @@ body.admin-body {
     overflow-y: auto;
     z-index: 1030;
     transition: transform 0.3s ease;
+}
+
+/* Sidebar brand block */
+.sidebar-brand-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 1.5rem 0.9rem;
+    border-bottom: 1px solid var(--clr-card-border);
+    background: linear-gradient(135deg, #F9FBF9 0%, #EEF7EE 100%);
+}
+
+.sidebar-logo {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.10));
+}
+
+.sidebar-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.sidebar-brand-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--clr-primary-dark);
+    letter-spacing: 0.01em;
+}
+
+.sidebar-brand-sub {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--clr-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .sidebar-nav {
@@ -231,5 +273,30 @@ body.admin-body {
     }
     .admin-main {
         margin-left: 0;
+    }
+
+    /* Shrink topbar logo on small screens */
+    .admin-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .admin-brand span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admin-logo {
+        width: 34px;
+        height: 34px;
+    }
+
+    .admin-brand {
+        gap: 0.5rem;
+    }
+
+    .admin-brand span {
+        font-size: 0.92rem;
     }
 }

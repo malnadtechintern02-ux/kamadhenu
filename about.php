@@ -38,7 +38,7 @@ include BASE_PATH . '/includes/navbar.php';
 <section class="section">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6 animate-on-scroll">
+            <div class="col-lg-6 animate-on-scroll fade-left">
                 <div class="about-image-wrapper">
                     <img src="<?= ASSETS_URL ?>/images/about/goushala-about.jpg" 
                          alt="Kamadhenu Goushala" loading="lazy"
@@ -51,7 +51,7 @@ include BASE_PATH . '/includes/navbar.php';
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 animate-on-scroll">
+            <div class="col-lg-6 animate-on-scroll fade-right">
                 <span class="text-uppercase text-primary-custom fw-semibold small d-block mb-2">Our Story</span>
                 <h2 class="mb-3">About Our Goushala</h2>
                 <p>Kamadhenu Goushala is dedicated to protecting indigenous Indian cow breeds and promoting sustainable agriculture practices rooted in our ancient traditions.</p>
@@ -86,7 +86,7 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- Quote Section -->
 <section class="section section-warm">
     <div class="container">
-        <div class="text-center mx-auto" style="max-width: 750px;">
+        <div class="text-center mx-auto animate-on-scroll blur-in" style="max-width: 750px;">
             <i class="bi bi-quote fs-1 text-gold d-block mb-3"></i>
             <blockquote class="font-heading fs-4 text-brown mb-3" style="line-height: 1.6;">
                 "The place we refer to as home deserves to be recognized as such only if it is filled with devotion and respect for Guru and Gau Mata."
@@ -117,7 +117,7 @@ include BASE_PATH . '/includes/navbar.php';
                     ];
                     foreach ($timeline as $i => $item):
                     ?>
-                    <div class="d-flex mb-4 animate-on-scroll">
+                    <div class="d-flex mb-4 animate-on-scroll fade-left">
                         <div class="me-4 text-center" style="min-width: 80px;">
                             <div class="bg-primary text-white rounded-3 px-3 py-2 fw-bold font-heading"><?= e($item['year']) ?></div>
                             <?php if ($i < count($timeline) - 1): ?>
@@ -141,21 +141,21 @@ include BASE_PATH . '/includes/navbar.php';
     <div class="container">
         <h2 class="section-title">Our Mission</h2>
         <div class="row g-4 mt-2">
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon"><i class="bi bi-shield-check"></i></div>
                     <h3 class="seva-title">Protection</h3>
                     <p class="seva-text">Provide safe shelter, nutritious food, and medical care to indigenous cows, especially those rescued from neglect or abuse.</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon"><i class="bi bi-book"></i></div>
                     <h3 class="seva-title">Education</h3>
                     <p class="seva-text">Educate communities about the importance of indigenous breeds, A2 milk, sustainable farming, and cow-based products.</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon"><i class="bi bi-tree"></i></div>
                     <h3 class="seva-title">Sustainability</h3>
@@ -175,7 +175,7 @@ include BASE_PATH . '/includes/navbar.php';
         
         <div class="row g-4">
             <?php foreach ($breeds as $breed): ?>
-            <div class="col-lg col-md-4 col-6 animate-on-scroll">
+            <div class="col-lg col-md-4 col-6 animate-on-scroll scale-up">
                 <a href="<?= SITE_URL ?>/breed-details.php?slug=<?= e($breed['slug']) ?>" class="text-decoration-none">
                     <div class="breed-card">
                         <img src="<?= getUploadUrl($breed['image'] ? 'breeds/' . $breed['image'] : '', getPlaceholderImage($breed['name'], 400, 300)) ?>" 

@@ -75,7 +75,7 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      HERO SECTION
      ============================================================ -->
-<section class="hero-section" id="heroSection">
+<section class="hero-section animate-fade-slide delay-100" id="heroSection">
     <div class="hero-bg" style="background-image: url('<?= ASSETS_URL ?>/images/hero/hero-bg.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-shapes">
@@ -88,10 +88,10 @@ include BASE_PATH . '/includes/navbar.php';
         <h1 class="hero-title">Protecting Gau Mata.<br>Preserving Our Heritage.</h1>
         <p class="hero-subtitle">Serving indigenous cows with compassion, care and devotion at Kamadhenu Goushala, nestled in the sacred lands of Kodagu, Karnataka.</p>
         <div class="hero-buttons">
-            <a href="<?= SITE_URL ?>/donate.php" class="btn btn-donate btn-lg">
+            <a href="<?= SITE_URL ?>/donate.php" class="btn btn-donate btn-lg animate-fade-slide delay-100">
                 <i class="bi bi-heart-fill me-2"></i>Donate Now
             </a>
-            <a href="<?= SITE_URL ?>/adopt-a-cow.php" class="btn btn-outline-light btn-lg">
+            <a href="<?= SITE_URL ?>/adopt-a-cow.php" class="btn btn-outline-light btn-lg animate-fade-slide delay-100">
                 <i class="bi bi-house-heart me-2"></i>Adopt a Cow
             </a>
         </div>
@@ -101,33 +101,33 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      STATS SECTION
      ============================================================ -->
-<section class="stats-section" id="statsSection">
+<section class="section animate-fade-slide delay-300" id="newsSection">
     <div class="container">
         <div class="stats-container">
             <div class="row g-3">
                 <div class="col-6 col-md-3">
-                    <div class="stat-item animate-on-scroll">
+                    <div class="stat-item animate-on-scroll zoom-in">
                         <div class="stat-icon"><i class="bi bi-heart-fill"></i></div>
                         <div class="stat-number" data-counter="<?= (int)$statTotalCows ?>" data-suffix="+">0</div>
                         <div class="stat-label">Cows Protected</div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-item animate-on-scroll">
+                    <div class="stat-item animate-on-scroll zoom-in">
                         <div class="stat-icon"><i class="bi bi-shield-check"></i></div>
                         <div class="stat-number" data-counter="<?= (int)$statRescuedCows ?>" data-suffix="+">0</div>
                         <div class="stat-label">Cows Rescued</div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-item animate-on-scroll">
+                    <div class="stat-item animate-on-scroll zoom-in">
                         <div class="stat-icon"><i class="bi bi-flower1"></i></div>
                         <div class="stat-number" data-counter="<?= (int)$statSevaPrograms ?>">0</div>
                         <div class="stat-label">Seva Programs</div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-item animate-on-scroll">
+                    <div class="stat-item animate-on-scroll zoom-in">
                         <div class="stat-icon"><i class="bi bi-calendar-heart"></i></div>
                         <div class="stat-number" data-counter="<?= (int)$statYearsService ?>" data-suffix="+">0</div>
                         <div class="stat-label">Years of Service</div>
@@ -141,10 +141,10 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      ABOUT GOUSHALA
      ============================================================ -->
-<section class="section" id="aboutSection">
+<section class="section animate-fade-slide delay-300" id="aboutSection">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6 animate-on-scroll">
+            <div class="col-lg-6 animate-on-scroll fade-left">
                 <div class="about-image-wrapper">
                     <img src="<?= ASSETS_URL ?>/images/about/goushala-about.jpg" 
                          alt="Kamadhenu Goushala" 
@@ -158,7 +158,7 @@ include BASE_PATH . '/includes/navbar.php';
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 animate-on-scroll">
+            <div class="col-lg-6 animate-on-scroll fade-right">
                 <span class="text-uppercase text-primary-custom fw-semibold small ls-wide d-block mb-2">About Our Goushala</span>
                 <h2 class="mb-3">A Sacred Sanctuary for Indigenous Cows</h2>
                 <p>Kamadhenu Goushala is dedicated to protecting indigenous Indian cow breeds and promoting sustainable agriculture practices rooted in our ancient traditions.</p>
@@ -177,14 +177,14 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      GAU SEVA SECTION
      ============================================================ -->
-<section class="section section-warm" id="sevaSection">
+<section class="section section-warm animate-fade-slide delay-300" id="sevaSection">
     <div class="container">
         <h2 class="section-title">Gau Seva Opportunities</h2>
         <p class="section-subtitle">Support Gau Mata through seva paths rooted in devotion and dharma. Every act of seva brings blessings.</p>
         
         <div class="row g-4">
             <?php foreach ($sevaCategories as $seva): ?>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon">
                         <i class="bi <?= e($seva['icon'] ?: 'bi-heart-fill') ?>"></i>
@@ -200,7 +200,7 @@ include BASE_PATH . '/includes/navbar.php';
             
             <?php if (empty($sevaCategories)): ?>
             <!-- Fallback static seva cards -->
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon"><i class="bi bi-heart-fill"></i></div>
                     <h3 class="seva-title">Feed a Cow</h3>
@@ -208,7 +208,7 @@ include BASE_PATH . '/includes/navbar.php';
                     <a href="<?= SITE_URL ?>/feed-a-cow.php" class="btn btn-primary-custom btn-sm">Feed Now <i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon"><i class="bi bi-house-heart-fill"></i></div>
                     <h3 class="seva-title">Adopt a Cow</h3>
@@ -216,7 +216,7 @@ include BASE_PATH . '/includes/navbar.php';
                     <a href="<?= SITE_URL ?>/adopt-a-cow.php" class="btn btn-primary-custom btn-sm">Adopt Now <i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="seva-card">
                     <div class="seva-icon"><i class="bi bi-gift-fill"></i></div>
                     <h3 class="seva-title">General Donation</h3>
@@ -232,7 +232,7 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      FEATURED COWS
      ============================================================ -->
-<section class="section" id="cowsSection">
+<section class="section animate-fade-slide delay-300" id="cowsSection">
     <div class="container">
         <h2 class="section-title">Our Beloved Cows</h2>
         <p class="section-subtitle">Meet some of the beautiful indigenous cows we protect and nurture at Kamadhenu Goushala.</p>
@@ -281,14 +281,14 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      INDIGENOUS BREEDS
      ============================================================ -->
-<section class="section section-warm" id="breedsSection">
+<section class="section section-warm animate-fade-slide delay-300" id="breedsSection">
     <div class="container">
         <h2 class="section-title">Indigenous Breeds We Protect</h2>
         <p class="section-subtitle">Preserving the sacred native cow breeds of Bharath, each with unique characteristics and significance.</p>
         
         <div class="row g-4">
             <?php foreach ($breeds as $breed): ?>
-            <div class="col-lg col-md-4 col-6 animate-on-scroll">
+            <div class="col-lg col-md-4 col-6 animate-on-scroll scale-up">
                 <a href="<?= SITE_URL ?>/breed-details.php?slug=<?= e($breed['slug']) ?>" class="text-decoration-none">
                     <div class="breed-card">
                         <img src="<?= getUploadUrl($breed['image'] ? 'breeds/' . $breed['image'] : '', getPlaceholderImage($breed['name'], 400, 300)) ?>" 
@@ -315,7 +315,7 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- ============================================================
      ADOPTION CTA
      ============================================================ -->
-<section class="adoption-cta" id="adoptionCta">
+<section class="adoption-cta animate-fade-slide delay-300" id="adoptionCta">
     <div class="container text-center">
         <h2 class="animate-on-scroll">Give a Cow a Better Tomorrow</h2>
         <p class="animate-on-scroll" style="max-width: 650px; margin: 0 auto 2rem;">
@@ -333,7 +333,7 @@ include BASE_PATH . '/includes/navbar.php';
      UPCOMING EVENTS
      ============================================================ -->
 <?php if (!empty($upcomingEvents)): ?>
-<section class="section" id="eventsSection">
+<section class="section animate-fade-slide delay-300" id="eventsSection">
     <div class="container">
         <h2 class="section-title">Upcoming Events</h2>
         <p class="section-subtitle">Join us in our sacred events and programs dedicated to Gau Seva and community service.</p>
@@ -343,7 +343,7 @@ include BASE_PATH . '/includes/navbar.php';
                 $eventDate = new DateTime($event['event_date']);
             ?>
             <div class="col-lg-4 col-md-6 animate-on-scroll">
-                <div class="custom-card event-card">
+                <div class="custom-card event-card animate-fade-slide delay-200">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($event['image'] ? 'events/' . $event['image'] : '', getPlaceholderImage($event['title'], 400, 250)) ?>" 
                              alt="<?= e($event['title']) ?>" loading="lazy"
@@ -387,7 +387,7 @@ include BASE_PATH . '/includes/navbar.php';
         <div class="row g-4">
             <?php foreach ($latestNews as $article): ?>
             <div class="col-lg-4 col-md-6 animate-on-scroll">
-                <div class="custom-card">
+                <div class="custom-card animate-fade-slide delay-200">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($article['featured_image'] ? 'news/' . $article['featured_image'] : '', getPlaceholderImage($article['title'], 400, 250)) ?>" 
                              alt="<?= e($article['title']) ?>" loading="lazy"
@@ -427,14 +427,14 @@ include BASE_PATH . '/includes/navbar.php';
      GALLERY PREVIEW
      ============================================================ -->
 <?php if (!empty($galleryImages)): ?>
-<section class="section" id="gallerySection">
+<section class="section animate-fade-slide delay-300" id="gallerySection">
     <div class="container">
         <h2 class="section-title">Photo Gallery</h2>
         <p class="section-subtitle">Glimpses of daily life, care, and devotion at Kamadhenu Goushala.</p>
         
         <div class="gallery-grid">
             <?php foreach ($galleryImages as $img): ?>
-            <div class="gallery-item animate-on-scroll" data-gallery="<?= getUploadUrl('gallery/' . $img['image_path']) ?>" data-caption="<?= e($img['caption'] ?? '') ?>">
+            <div class="gallery-item animate-on-scroll zoom-in" data-gallery="<?= getUploadUrl('gallery/' . $img['image_path']) ?>" data-caption="<?= e($img['caption'] ?? '') ?>">
                 <img src="<?= getUploadUrl('gallery/' . $img['image_path'], getPlaceholderImage($img['caption'] ?? 'Gallery', 300, 300)) ?>" 
                      alt="<?= e($img['alt_text'] ?? $img['caption'] ?? 'Goushala gallery') ?>" loading="lazy"
                      onerror="this.src='<?= getPlaceholderImage($img['caption'] ?? 'Gallery', 300, 300) ?>'">
@@ -458,7 +458,7 @@ include BASE_PATH . '/includes/navbar.php';
      FEATURED PRODUCTS
      ============================================================ -->
 <?php if (!empty($featuredProducts)): ?>
-<section class="section section-warm" id="productsSection">
+<section class="section section-warm animate-fade-slide delay-300" id="productsSection">
     <div class="container">
         <h2 class="section-title">Goushala Products</h2>
         <p class="section-subtitle">Authentic, natural products made from indigenous cow derivatives. Support Gau Seva with every purchase.</p>
@@ -466,7 +466,7 @@ include BASE_PATH . '/includes/navbar.php';
         <div class="row g-4">
             <?php foreach ($featuredProducts as $product): ?>
             <div class="col-lg-3 col-md-6 animate-on-scroll">
-                <div class="custom-card product-card">
+                <div class="custom-card product-card animate-fade-slide delay-200">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($product['image'] ? 'products/' . $product['image'] : '', getPlaceholderImage($product['name'], 400, 300)) ?>" 
                              alt="<?= e($product['name']) ?>" loading="lazy"
@@ -502,14 +502,14 @@ include BASE_PATH . '/includes/navbar.php';
      TESTIMONIALS
      ============================================================ -->
 <?php if (!empty($testimonials)): ?>
-<section class="section" id="testimonialsSection">
+<section class="section animate-fade-slide delay-300" id="testimonialsSection">
     <div class="container">
         <h2 class="section-title">What People Say</h2>
         <p class="section-subtitle">Hear from our supporters and visitors about their experience with Kamadhenu Goushala.</p>
         
         <div class="row g-4">
             <?php foreach (array_slice($testimonials, 0, 3) as $testimonial): ?>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll flip-up">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">
                         <?php for ($i = 0; $i < $testimonial['rating']; $i++): ?>

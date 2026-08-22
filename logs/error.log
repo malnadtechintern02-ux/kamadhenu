@@ -465,3 +465,36 @@ Stack trace:
 [21-Aug-2026 08:38:03 Europe/Berlin] DB Query Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
 [21-Aug-2026 08:38:07 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
 [21-Aug-2026 08:38:07 Europe/Berlin] DB Count Error: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it
+[21-Aug-2026 11:42:49 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[21-Aug-2026 11:42:58 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[21-Aug-2026 11:43:30 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.adoptions a left join cows c on a.cow_id = c.id' doesn't exist
+[21-Aug-2026 13:25:27 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[21-Aug-2026 13:29:04 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:08:51 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:08:55 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:10:27 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:10:38 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:10:40 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:10:40 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:11:00 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:11:00 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:11:09 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:11:10 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 08:11:33 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:29:12 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:29:35 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:30:04 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:42:07 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:44:33 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:50:43 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:50:51 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:50:52 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:50:52 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 08:51:19 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 09:00:26 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 09:00:31 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 09:09:13 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 09:15:31 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 10:56:44 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist
+[22-Aug-2026 11:26:59 Europe/Berlin] DB Count Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'
+[22-Aug-2026 11:28:15 Europe/Berlin] DB Count Error: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamadhenu_goushala.cows c' doesn't exist

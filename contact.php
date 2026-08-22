@@ -85,42 +85,31 @@ include BASE_PATH . '/includes/navbar.php';
     <div class="container">
         <div class="row g-5">
             <!-- Contact Info -->
-            <div class="col-lg-5 animate-on-scroll">
-                <h3 class="mb-4">Get In Touch</h3>
-                
-                <div class="d-flex mb-4">
-                    <div class="stat-icon me-3 flex-shrink-0"><i class="bi bi-geo-alt-fill"></i></div>
-                    <div>
-                        <h5 class="mb-1">Visit Us</h5>
-                        <p class="text-muted mb-0"><?= e($address) ?></p>
-                    </div>
+            <div class="col-lg-5 animate-on-scroll fade-left">
+                <div class="card border-0 rounded-4 p-4 p-lg-5 mb-4 shadow-sm" style="background-color: var(--clr-brown); color: var(--clr-gold);">
+                    <h3 class="mb-4 text-gold font-heading">Contact Us</h3>
+                    
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-4 fs-5">
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-geo-alt-fill me-3 fs-4"></i>
+                            <span class="text-white opacity-75"><?= e($address) ?></span>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-telephone-fill me-3 fs-4"></i>
+                            <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $phone)) ?>" class="text-white opacity-75 text-decoration-none hover-gold"><?= e($phone) ?></a>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-envelope-fill me-3 fs-4"></i>
+                            <a href="mailto:<?= e($email) ?>" class="text-white opacity-75 text-decoration-none hover-gold"><?= e($email) ?></a>
+                        </li>
+                        <?php if ($whatsapp): ?>
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-whatsapp me-3 fs-4"></i>
+                            <a href="<?= e(getWhatsAppLink('🙏 Namaste, I would like to contact Kamadhenu Goushala.')) ?>" target="_blank" class="text-white opacity-75 text-decoration-none hover-gold">WhatsApp Chat</a>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
                 </div>
-                
-                <div class="d-flex mb-4">
-                    <div class="stat-icon me-3 flex-shrink-0"><i class="bi bi-telephone-fill"></i></div>
-                    <div>
-                        <h5 class="mb-1">Call Us</h5>
-                        <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $phone)) ?>" class="text-muted"><?= e($phone) ?></a>
-                    </div>
-                </div>
-                
-                <div class="d-flex mb-4">
-                    <div class="stat-icon me-3 flex-shrink-0"><i class="bi bi-envelope-fill"></i></div>
-                    <div>
-                        <h5 class="mb-1">Email Us</h5>
-                        <a href="mailto:<?= e($email) ?>" class="text-muted"><?= e($email) ?></a>
-                    </div>
-                </div>
-                
-                <?php if ($whatsapp): ?>
-                <div class="d-flex mb-4">
-                    <div class="stat-icon me-3 flex-shrink-0" style="background:#dcf8c6;"><i class="bi bi-whatsapp" style="color:#25D366;"></i></div>
-                    <div>
-                        <h5 class="mb-1">WhatsApp</h5>
-                        <a href="<?= e(getWhatsAppLink('🙏 Namaste, I would like to contact Kamadhenu Goushala.')) ?>" target="_blank" class="text-muted">Chat with us</a>
-                    </div>
-                </div>
-                <?php endif; ?>
                 
                 <!-- Map -->
                 <?php if ($mapsUrl): ?>
@@ -132,7 +121,7 @@ include BASE_PATH . '/includes/navbar.php';
             </div>
             
             <!-- Contact Form -->
-            <div class="col-lg-7 animate-on-scroll">
+            <div class="col-lg-7 animate-on-scroll fade-right">
                 <div class="card border-0 shadow-sm rounded-4 p-4">
                     <h3 class="mb-3">Send a Message</h3>
                     <p class="text-muted mb-4">Fill out the form below and we'll respond as soon as possible.</p>

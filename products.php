@@ -73,7 +73,7 @@ include BASE_PATH . '/includes/navbar.php';
         <?php else: ?>
         <div class="row g-4">
             <?php foreach ($products as $product): ?>
-            <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="col-lg-3 col-md-6 animate-on-scroll zoom-in">
                 <div class="custom-card product-card">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($product['image'] ? 'products/' . $product['image'] : '', getPlaceholderImage($product['name'], 400, 300)) ?>" 

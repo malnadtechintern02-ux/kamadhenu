@@ -38,7 +38,7 @@ include BASE_PATH . '/includes/navbar.php';
             <?php foreach ($sevaCategories as $seva): 
                 $amounts = array_filter(explode(',', $seva['suggested_amounts'] ?? ''));
             ?>
-            <div class="col-lg-6 animate-on-scroll">
+            <div class="col-lg-6 animate-on-scroll fade-right">
                 <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
                     <div class="row g-0 h-100">
                         <div class="col-md-5">
@@ -94,28 +94,28 @@ include BASE_PATH . '/includes/navbar.php';
         <p class="section-subtitle">Every contribution directly supports the well-being of Gau Mata at our Goushala.</p>
         
         <div class="row g-4">
-            <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="col-lg-3 col-md-6 animate-on-scroll zoom-in">
                 <div class="text-center">
                     <div class="stat-icon mx-auto mb-3"><i class="bi bi-flower1"></i></div>
                     <h5>Daily Feeding</h5>
                     <p class="small text-muted">Each cow requires ₹80-100 worth of food daily — green fodder, grains, jaggery, and mineral supplements.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="col-lg-3 col-md-6 animate-on-scroll zoom-in">
                 <div class="text-center">
                     <div class="stat-icon mx-auto mb-3"><i class="bi bi-plus-circle"></i></div>
                     <h5>Medical Care</h5>
                     <p class="small text-muted">Regular vaccinations, deworming, dental care, and emergency treatments for all our cows.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="col-lg-3 col-md-6 animate-on-scroll zoom-in">
                 <div class="text-center">
                     <div class="stat-icon mx-auto mb-3"><i class="bi bi-building"></i></div>
                     <h5>Shelter</h5>
                     <p class="small text-muted">Clean, spacious shelters with proper drainage, ventilation, and bedding for all cows.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="col-lg-3 col-md-6 animate-on-scroll zoom-in">
                 <div class="text-center">
                     <div class="stat-icon mx-auto mb-3"><i class="bi bi-people"></i></div>
                     <h5>Staff & Care</h5>
@@ -129,7 +129,7 @@ include BASE_PATH . '/includes/navbar.php';
 <!-- Quick Donate -->
 <section class="adoption-cta">
     <div class="container text-center">
-        <h2 class="animate-on-scroll">Every Rupee Counts</h2>
+        <h2 class="animate-on-scroll blur-in">Every Rupee Counts</h2>
         <p class="animate-on-scroll" style="max-width:600px; margin:0 auto 2rem; color:rgba(255,255,255,.85);">
             Whether you contribute ₹101 or ₹11,000, your seva directly impacts the life of Gau Mata.
         </p>

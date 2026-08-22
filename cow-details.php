@@ -59,7 +59,7 @@ include BASE_PATH . '/includes/navbar.php';
     <div class="container">
         <div class="row g-5">
             <!-- Photo -->
-            <div class="col-lg-5 animate-on-scroll">
+            <div class="col-lg-5 animate-on-scroll fade-left">
                 <div class="rounded-4 overflow-hidden shadow-lg">
                     <img src="<?= getCowPhotoUrl($cow['photo'], $cow['name']) ?>" 
                          alt="<?= e($cow['name']) ?>" class="w-100" style="aspect-ratio:1; object-fit:cover;">
@@ -82,7 +82,7 @@ include BASE_PATH . '/includes/navbar.php';
             </div>
             
             <!-- Details -->
-            <div class="col-lg-7 animate-on-scroll">
+            <div class="col-lg-7 animate-on-scroll fade-right">
                 <div class="d-flex align-items-center gap-2 mb-3">
                     <span class="badge <?= getStatusBadgeClass($cow['status']) ?> fs-6"><?= e($cow['status']) ?></span>
                     <?php if ($cow['is_adoptable']): ?>

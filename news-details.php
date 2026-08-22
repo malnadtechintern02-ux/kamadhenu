@@ -125,7 +125,7 @@ include BASE_PATH . '/includes/navbar.php';
         <h2 class="section-title">More News</h2>
         <div class="row g-4">
             <?php foreach ($relatedArticles as $ra): ?>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll zoom-in">
                 <div class="custom-card">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($ra['featured_image'] ? 'news/' . $ra['featured_image'] : '', getPlaceholderImage($ra['title'], 400, 250)) ?>" 

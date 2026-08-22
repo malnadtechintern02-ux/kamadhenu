@@ -19,7 +19,6 @@ function isAdminActive(string $page): string {
     <div class="d-flex align-items-center">
         <button class="btn btn-sm me-3 d-lg-none" id="sidebarToggle"><i class="bi bi-list fs-5"></i></button>
         <a href="<?= ADMIN_URL ?>/index.php" class="admin-brand">
-            <div class="admin-logo-icon"><i class="bi bi-flower2"></i></div>
             <span>Kamadenu Admin</span>
         </a>
     </div>
@@ -42,6 +41,13 @@ function isAdminActive(string $page): string {
 
 <!-- Sidebar -->
 <aside class="admin-sidebar" id="adminSidebar">
+    <div class="sidebar-brand-block">
+        <img src="<?= ASSETS_URL ?>/images/logo-icon.png" alt="Kamadenu Goushala" class="sidebar-logo">
+        <div class="sidebar-brand-text">
+            <span class="sidebar-brand-name">Kamadenu</span>
+            <span class="sidebar-brand-sub">Goushala</span>
+        </div>
+    </div>
     <nav class="sidebar-nav">
         <ul class="nav flex-column">
             <li class="nav-item">

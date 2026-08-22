@@ -54,14 +54,14 @@ include BASE_PATH . '/includes/navbar.php';
 <section class="section">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-5 animate-on-scroll">
+            <div class="col-lg-5 animate-on-scroll fade-left">
                 <div class="rounded-4 overflow-hidden shadow-lg">
                     <img src="<?= getUploadUrl($product['image'] ? 'products/' . $product['image'] : '', getPlaceholderImage($product['name'], 500, 500)) ?>" 
                          alt="<?= e($product['name']) ?>" class="w-100" style="aspect-ratio:1; object-fit:cover;"
                          onerror="this.src='<?= getPlaceholderImage($product['name'], 500, 500) ?>'">
                 </div>
             </div>
-            <div class="col-lg-7 animate-on-scroll">
+            <div class="col-lg-7 animate-on-scroll fade-right">
                 <?php if (!empty($product['category_name'])): ?>
                 <span class="badge bg-primary-light text-primary-custom mb-2"><?= e($product['category_name']) ?></span>
                 <?php endif; ?>
@@ -126,7 +126,7 @@ include BASE_PATH . '/includes/navbar.php';
         <h2 class="section-title">Related Products</h2>
         <div class="row g-4">
             <?php foreach ($relatedProducts as $rp): ?>
-            <div class="col-lg-3 col-md-6 animate-on-scroll">
+            <div class="col-lg-3 col-md-6 animate-on-scroll zoom-in">
                 <div class="custom-card product-card">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($rp['image'] ? 'products/' . $rp['image'] : '', getPlaceholderImage($rp['name'], 400, 300)) ?>" 

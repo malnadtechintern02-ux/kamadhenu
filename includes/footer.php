@@ -52,7 +52,7 @@ $currentYear = date('Y');
             </div>
             
             <!-- Quick Links -->
-            <div class="col-lg-2 col-md-6 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="<?= SITE_URL ?>/">Home</a></li>
@@ -67,7 +67,7 @@ $currentYear = date('Y');
             </div>
             
             <!-- Seva Links -->
-            <div class="col-lg-2 col-md-6 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <h4 class="footer-heading">Seva</h4>
                 <ul class="footer-links">
                     <li><a href="<?= SITE_URL ?>/gau-seva.php">Seva Offerings</a></li>
@@ -75,15 +75,19 @@ $currentYear = date('Y');
                     <li><a href="<?= SITE_URL ?>/adopt-a-cow.php">Adopt a Cow</a></li>
                     <li><a href="<?= SITE_URL ?>/donate.php">Donate</a></li>
                 </ul>
-                <h4 class="footer-heading mt-3">Legal</h4>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="col-lg-2 col-md-3 col-6">
+                <h4 class="footer-heading">Legal</h4>
                 <ul class="footer-links">
                     <li><a href="<?= SITE_URL ?>/privacy-policy.php">Privacy Policy</a></li>
-                    <li><a href="<?= SITE_URL ?>/terms.php">Terms & Conditions</a></li>
+                    <li><a href="<?= SITE_URL ?>/terms.php">Terms &amp; Conditions</a></li>
                 </ul>
             </div>
             
             <!-- Contact Info -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <h4 class="footer-heading">Contact Us</h4>
                 <ul class="footer-contact">
                     <li>
@@ -117,9 +121,7 @@ $currentYear = date('Y');
                     <?php if ($yt = getSetting('youtube_url')): ?>
                     <a href="<?= e($yt) ?>" target="_blank" rel="noopener" aria-label="YouTube" class="social-link"><i class="bi bi-youtube"></i></a>
                     <?php endif; ?>
-                    <?php if ($whatsapp): ?>
-                    <a href="<?= e($whatsappLink) ?>" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link"><i class="bi bi-whatsapp"></i></a>
-                    <?php endif; ?>
+
                 </div>
             </div>
         </div>
@@ -138,12 +140,7 @@ $currentYear = date('Y');
     </div>
 </footer>
 
-<!-- WhatsApp Floating Button -->
-<?php if ($whatsapp): ?>
-<a href="<?= e($whatsappLink) ?>" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp" id="whatsappFloat">
-    <i class="bi bi-whatsapp"></i>
-</a>
-<?php endif; ?>
+
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">

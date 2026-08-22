@@ -79,7 +79,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
             </button>
 
             <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="navbarMain">
+            <div class="collapse navbar-collapse mobile-nav-scroll" id="navbarMain">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link <?= ($currentPath === '/kamadhenu/' || $currentPath === '/kamadhenu/index.php') ? 'active' : '' ?>" href="<?= SITE_URL ?>/">

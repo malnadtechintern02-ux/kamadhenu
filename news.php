@@ -73,7 +73,7 @@ include BASE_PATH . '/includes/navbar.php';
         <?php else: ?>
         <div class="row g-4">
             <?php foreach ($articles as $article): ?>
-            <div class="col-lg-4 col-md-6 animate-on-scroll">
+            <div class="col-lg-4 col-md-6 animate-on-scroll fade-up">
                 <div class="custom-card">
                     <div class="card-img-wrapper">
                         <img src="<?= getUploadUrl($article['featured_image'] ? 'news/' . $article['featured_image'] : '', getPlaceholderImage($article['title'], 400, 250)) ?>" 
