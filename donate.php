@@ -216,6 +216,15 @@ include BASE_PATH . '/includes/navbar.php';
                         <li class="mb-2"><strong>IFSC Code:</strong> <code class="fs-6"><?= e($ifsc) ?></code></li>
                         <li><strong>UPI ID:</strong> <code class="fs-6"><?= e($upiId) ?></code></li>
                     </ul>
+                    
+                    <div class="text-center mt-4 pt-3 border-top border-dark border-opacity-10">
+                        <p class="fw-bold mb-2 small">Scan to Donate via UPI</p>
+                        <?php 
+                        $qrData = urlencode("upi://pay?pa={$upiId}&pn={$accountName}");
+                        $qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={$qrData}";
+                        ?>
+                        <img src="<?= e($qrUrl) ?>" alt="UPI QR Code" class="img-fluid rounded border p-2 bg-white" style="max-width: 150px;">
+                    </div>
                 </div>
 
                 <div class="card border-0 shadow-sm rounded-4 p-4">

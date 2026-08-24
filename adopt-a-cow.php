@@ -13,6 +13,12 @@ $seo = [
     'description' => 'Adopt an indigenous cow at Kamadhenu Goushala. Support food, shelter, veterinary care, and receive personalized certificate and regular updates.',
 ];
 
+$bankName = getSetting('bank_name', 'State Bank of India');
+$accountName = getSetting('bank_account_name', 'Kamadenu Goushala Trust');
+$accountNumber = getSetting('bank_account_number', '123456789012');
+$ifsc = getSetting('bank_ifsc', 'SBIN0001234');
+$upiId = getSetting('upi_id', 'kamadhenu@upi');
+
 $preselectedCowId = getIntParam('cow');
 $adoptableCows = dbFetchAll("SELECT c.*, b.name as breed_name FROM cows c LEFT JOIN breeds b ON c.breed_id = b.id WHERE c.is_adoptable = 1 AND c.status = 'Available' ORDER BY c.name ASC");
 
@@ -204,6 +210,28 @@ include BASE_PATH . '/includes/navbar.php';
 
             <!-- Adoption Benefits Sidebar -->
             <div class="col-lg-5">
+                <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" style="background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-gold-light));">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-bank me-2 text-primary-custom"></i>Direct Bank Transfer</h4>
+                    <p class="small text-muted mb-3">You can also donate directly to our official Goushala trust bank account:</p>
+                    
+                    <ul class="list-unstyled mb-0 small">
+                        <li class="mb-2"><strong>Account Name:</strong> <?= e($accountName) ?></li>
+                        <li class="mb-2"><strong>Bank:</strong> <?= e($bankName) ?></li>
+                        <li class="mb-2"><strong>Account No:</strong> <code class="fs-6"><?= e($accountNumber) ?></code></li>
+                        <li class="mb-2"><strong>IFSC Code:</strong> <code class="fs-6"><?= e($ifsc) ?></code></li>
+                        <li><strong>UPI ID:</strong> <code class="fs-6"><?= e($upiId) ?></code></li>
+                    </ul>
+                    
+                    <div class="text-center mt-4 pt-3 border-top border-dark border-opacity-10">
+                        <p class="fw-bold mb-2 small">Scan to Donate via UPI</p>
+                        <?php 
+                        $qrData = urlencode("upi://pay?pa={$upiId}&pn={$accountName}");
+                        $qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={$qrData}";
+                        ?>
+                        <img src="<?= e($qrUrl) ?>" alt="UPI QR Code" class="img-fluid rounded border p-2 bg-white" style="max-width: 150px;">
+                    </div>
+                </div>
+
                 <div class="card border-0 shadow-sm rounded-4 p-4 mb-4" style="background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-gold-light));">
                     <h4 class="fw-bold mb-3"><i class="bi bi-award me-2 text-primary-custom"></i>Guardian Privileges</h4>
                     <ul class="list-unstyled mb-0 small">

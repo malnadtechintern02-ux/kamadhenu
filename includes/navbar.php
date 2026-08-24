@@ -8,59 +8,23 @@
  */
 
 $siteName = getSetting('site_name', 'Kamadenu Goushala');
-$phone = getSetting('phone', '[PHONE NUMBER]');
-$email = getSetting('email', '[EMAIL ADDRESS]');
+$phone = getSetting('phone');
+if (empty($phone) || $phone === '[PHONE NUMBER]') {
+    $phone = '6763887630';
+}
+$email = getSetting('email');
+if (empty($email) || $email === '[EMAIL ADDRESS]') {
+    $email = 'sharath234@gmail.com';
+}
 $address = getSetting('address', 'Kavadi, Virajpet, Kodagu, Karnataka');
 $whatsapp = getSetting('whatsapp', '');
-$whatsappLink = getWhatsAppLink('🙏 Namaste Kamadenu Goushala, I would like to know more about Gau Seva.');
+$whatsappDefaultMsg = getSetting('whatsapp_default_msg', '🙏 Namaste, I would like to support Gau Seva.');
+$whatsappLink = getWhatsAppLink($whatsappDefaultMsg);
 $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
 ?>
 
 <!-- Header Wrapper -->
 <header class="site-header-wrapper" id="siteHeader">
-    <!-- Top Announcement & Contact Bar -->
-    <div class="top-header-bar d-none d-lg-block">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <!-- Left Contact Badges -->
-                <div class="top-header-info d-flex align-items-center gap-3">
-                    <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $phone)) ?>" class="top-info-link">
-                        <i class="bi bi-telephone-fill"></i> <?= e($phone) ?>
-                    </a>
-                    <span class="top-info-divider"></span>
-                    <a href="mailto:<?= e($email) ?>" class="top-info-link">
-                        <i class="bi bi-envelope-fill"></i> <?= e($email) ?>
-                    </a>
-                    <span class="top-info-divider"></span>
-                    <span class="top-info-text">
-                        <i class="bi bi-geo-alt-fill text-gold"></i> Kavadi, Virajpet, Kodagu, Karnataka
-                    </span>
-                </div>
-
-                <!-- Right Quick Links & Social -->
-                <div class="top-header-actions d-flex align-items-center gap-3">
-                    <span class="tax-badge">
-                        <i class="bi bi-patch-check-fill me-1"></i> 80G Tax Exempted
-                    </span>
-                    <span class="top-info-divider"></span>
-                    <div class="top-social-links d-flex align-items-center gap-2">
-                        <?php if ($fb = getSetting('facebook_url')): ?>
-                        <a href="<?= e($fb) ?>" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
-                        <?php endif; ?>
-                        <?php if ($ig = getSetting('instagram_url')): ?>
-                        <a href="<?= e($ig) ?>" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
-                        <?php endif; ?>
-                        <?php if ($yt = getSetting('youtube_url')): ?>
-                        <a href="<?= e($yt) ?>" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><i class="bi bi-youtube"></i></a>
-                        <?php endif; ?>
-                        <?php if ($whatsapp): ?>
-                        <a href="<?= e($whatsappLink) ?>" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp Chat"><i class="bi bi-whatsapp"></i></a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Main Navigation Bar -->
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
@@ -88,7 +52,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= isCurrentPage('about') ? 'active' : '' ?>" href="<?= SITE_URL ?>/about.php">
-                            <i class="bi bi-info-circle d-lg-none me-2"></i>About Us
+                            <i class="bi bi-info-circle d-lg-none me-2"></i>About
                         </a>
                     </li>
                     
@@ -137,16 +101,7 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
                                     </div>
                                 </a>
                             </li>
-                            <li><hr class="dropdown-divider my-1"></li>
-                            <li>
-                                <a class="dropdown-item py-2" href="<?= SITE_URL ?>/feed-a-cow.php">
-                                    <i class="bi bi-basket-fill text-warning me-2"></i>
-                                    <div>
-                                        <strong>Feed a Cow (Gau Grass)</strong>
-                                        <small class="d-block text-muted">Sponsor daily meals &amp; fodder</small>
-                                    </div>
-                                </a>
-                            </li>
+
                             <li>
                                 <a class="dropdown-item py-2" href="<?= SITE_URL ?>/adopt-a-cow.php">
                                     <i class="bi bi-house-heart-fill text-danger me-2"></i>
@@ -186,9 +141,6 @@ $currentPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
 
                     <!-- Action Buttons -->
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-flex gap-2">
-                        <a class="btn btn-feed-quick d-none d-xl-inline-flex align-items-center" href="<?= SITE_URL ?>/feed-a-cow.php">
-                            <i class="bi bi-flower1 me-1"></i> Feed Cow
-                        </a>
                         <a class="btn btn-donate" href="<?= SITE_URL ?>/donate.php">
                             <i class="bi bi-heart-fill me-1"></i> Donate Now
                         </a>

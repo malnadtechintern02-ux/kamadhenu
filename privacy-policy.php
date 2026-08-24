@@ -52,8 +52,14 @@ include BASE_PATH . '/includes/navbar.php';
 
             <h3 class="mb-3 mt-4">5. Contact Us</h3>
             <p>If you have any questions regarding our privacy practices, please contact us at:</p>
-            <p><strong>Email:</strong> <?= e(getSetting('email', '[EMAIL ADDRESS]')) ?><br>
-            <strong>Phone:</strong> <?= e(getSetting('phone', '[PHONE NUMBER]')) ?><br>
+            <?php
+            $pVal = getSetting('phone');
+            if (empty($pVal) || $pVal === '[PHONE NUMBER]') { $pVal = '6763887630'; }
+            $eVal = getSetting('email');
+            if (empty($eVal) || $eVal === '[EMAIL ADDRESS]') { $eVal = 'sharath234@gmail.com'; }
+            ?>
+            <p><strong>Email:</strong> <?= e($eVal) ?><br>
+            <strong>Phone:</strong> <?= e($pVal) ?><br>
             <strong>Address:</strong> <?= e(getSetting('address', '[GOUSHALA ADDRESS]')) ?></p>
         </div>
     </div>

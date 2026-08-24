@@ -7,8 +7,8 @@
 /**
  * Escape output for HTML to prevent XSS
  */
-function e(string $value): string {
-    return htmlspecialchars($value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+function e(?string $value): string {
+    return htmlspecialchars((string)$value, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 }
 
 /**
@@ -345,8 +345,8 @@ function isCurrentPage(string $path): bool {
 /**
  * Generate WhatsApp link
  */
-function getWhatsAppLink(string $message = ''): string {
-    $phone = getSetting('whatsapp', getSetting('phone', ''));
+function getWhatsAppLink(string $message = '', ?string $phoneOverride = null): string {
+    $phone = !empty($phoneOverride) ? $phoneOverride : getSetting('whatsapp', getSetting('phone', ''));
     $phone = preg_replace('/[^0-9]/', '', $phone);
     if (empty($phone)) return '#';
     return 'https://wa.me/' . $phone . ($message ? '?text=' . urlencode($message) : '');

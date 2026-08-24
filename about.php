@@ -16,6 +16,9 @@ $breeds = dbFetchAll("SELECT * FROM breeds WHERE is_active = 1 ORDER BY sort_ord
 $statYears = getSetting('stat_years_service', '6');
 $statCows = getSetting('stat_total_cows', '70');
 
+$aboutImage = getSetting('about_image');
+$aboutImageUrl = !empty($aboutImage) ? getUploadUrl('about/' . $aboutImage) : ASSETS_URL . '/images/about/goushala-about.jpg';
+
 include BASE_PATH . '/includes/header.php';
 include BASE_PATH . '/includes/navbar.php';
 ?>
@@ -40,7 +43,7 @@ include BASE_PATH . '/includes/navbar.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6 animate-on-scroll fade-left">
                 <div class="about-image-wrapper">
-                    <img src="<?= ASSETS_URL ?>/images/about/goushala-about.jpg" 
+                    <img src="<?= e($aboutImageUrl) ?>" 
                          alt="Kamadhenu Goushala" loading="lazy"
                          onerror="this.src='<?= getPlaceholderImage('Kamadhenu Goushala', 600, 450) ?>'">
                     <div class="about-accent text-center">

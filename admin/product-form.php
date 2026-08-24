@@ -21,7 +21,9 @@ $product = [
     'description' => '',
     'stock_status' => 'In Stock',
     'is_featured' => 0,
-    'is_active' => 1
+    'is_active' => 1,
+    'whatsapp_number' => '',
+    'whatsapp_message' => ''
 ];
 
 if ($isEdit) {
@@ -39,13 +41,15 @@ if (isPost()) {
     requireCsrfToken();
     
     $product['name'] = getParam('name', '', 'POST');
-    $product['slug'] = getParam('slug', '', 'POST') ?: slugify($product['name']);
+    $product['slug'] = getParam('slug', '', 'POST') ?: generateSlug($product['name']);
     $product['category_id'] = getIntParam('category_id', 0, 'POST');
     $product['price'] = (float)getParam('price', 0, 'POST');
     $product['description'] = getParam('description', '', 'POST');
     $product['stock_status'] = getParam('stock_status', 'In Stock', 'POST');
     $product['is_featured'] = isset($_POST['is_featured']) ? 1 : 0;
     $product['is_active'] = isset($_POST['is_active']) ? 1 : 0;
+    $product['whatsapp_number'] = getParam('whatsapp_number', '', 'POST');
+    $product['whatsapp_message'] = getParam('whatsapp_message', '', 'POST');
 
     $validator = new Validator($product);
     $validator->required('name', 'Product Name')
@@ -75,7 +79,9 @@ if (isPost()) {
                 'description' => $product['description'],
                 'stock_status' => $product['stock_status'],
                 'is_featured' => $product['is_featured'],
-                'is_active' => $product['is_active']
+                'is_active' => $product['is_active'],
+                'whatsapp_number' => $product['whatsapp_number'] ?: null,
+                'whatsapp_message' => $product['whatsapp_message'] ?: null
             ];
 
             if ($isEdit) {
@@ -93,6 +99,11 @@ if (isPost()) {
 }
 
 $categories = dbFetchAll("SELECT id, name FROM product_categories ORDER BY name ASC");
+$whatsappJson = getSetting('whatsapp_numbers', '[]');
+$whatsappNumbers = json_decode($whatsappJson, true);
+if (!is_array($whatsappNumbers)) {
+    $whatsappNumbers = [];
+}
 
 require_once __DIR__ . '/includes/admin-header.php';
 require_once __DIR__ . '/includes/admin-sidebar.php';
@@ -162,6 +173,42 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
             <textarea name="description" rows="5" class="form-control"><?= e($product['description']) ?></textarea>
         </div>
 
+        <!-- WhatsApp Configuration Override -->
+        <div class="col-12 mt-4 pt-3 border-top">
+            <h5 class="fw-bold mb-3 text-success"><i class="bi bi-whatsapp me-2"></i>Order via WhatsApp Configurations</h5>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Order WhatsApp Number</label>
+                    <select name="whatsapp_number_select" id="whatsapp_number_select" class="form-select">
+                        <option value="default" <?= (empty($product['whatsapp_number']) ? 'selected' : '') ?>>Use Active Default Number (<?= e(getSetting('whatsapp')) ?>)</option>
+                        <?php foreach ($whatsappNumbers as $num): ?>
+                        <option value="<?= e($num['number']) ?>" <?= ($product['whatsapp_number'] === $num['number'] ? 'selected' : '') ?>><?= e($num['label']) ?> (<?= e($num['number']) ?>)</option>
+                        <?php endforeach; ?>
+                        <option value="custom" <?= (!empty($product['whatsapp_number']) && !in_array($product['whatsapp_number'], array_column($whatsappNumbers, 'number')) ? 'selected' : '') ?>>Custom Number...</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6" id="custom_whatsapp_wrapper" style="display: none;">
+                    <label class="form-label fw-semibold">Custom WhatsApp Number (with country code)</label>
+                    <input type="text" name="whatsapp_number_custom" id="whatsapp_number_custom" class="form-control" value="<?= e($product['whatsapp_number']) ?>" placeholder="+91...">
+                </div>
+
+                <input type="hidden" name="whatsapp_number" id="whatsapp_number_hidden" value="<?= e($product['whatsapp_number']) ?>">
+
+                <div class="col-md-12">
+                    <label class="form-label fw-semibold">Custom WhatsApp Message Template</label>
+                    <textarea name="whatsapp_message" rows="3" class="form-control" placeholder="Default template:
+🙏 Namaste, I would like to order:
+
+Product: <?= e($product['name']) ?>
+Price: ₹<?= e($product['price'] ?: 'PRICE') ?>
+
+Please share the ordering details."><?= e($product['whatsapp_message']) ?></textarea>
+                    <span class="form-text text-muted">Leave blank to use the standard default ordering template above.</span>
+                </div>
+            </div>
+        </div>
+
         <div class="col-md-12">
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" name="is_featured" id="is_featured" value="1" <?= $product['is_featured'] ? 'checked' : '' ?>>
@@ -181,5 +228,37 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
         </div>
     </div>
 </form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const select = document.getElementById('whatsapp_number_select');
+    const wrapper = document.getElementById('custom_whatsapp_wrapper');
+    const customInput = document.getElementById('whatsapp_number_custom');
+    const hiddenInput = document.getElementById('whatsapp_number_hidden');
+    
+    function updateWhatsAppFields() {
+        if (select.value === 'custom') {
+            wrapper.style.display = 'block';
+            hiddenInput.value = customInput.value;
+        } else if (select.value === 'default') {
+            wrapper.style.display = 'none';
+            hiddenInput.value = '';
+        } else {
+            wrapper.style.display = 'none';
+            hiddenInput.value = select.value;
+        }
+    }
+    
+    select.addEventListener('change', updateWhatsAppFields);
+    customInput.addEventListener('input', function() {
+        if (select.value === 'custom') {
+            hiddenInput.value = customInput.value;
+        }
+    });
+    
+    // Initial check
+    updateWhatsAppFields();
+});
+</script>
 
 <?php require_once __DIR__ . '/includes/admin-footer.php'; ?>

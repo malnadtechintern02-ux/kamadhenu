@@ -32,7 +32,8 @@ $relatedProducts = dbFetchAll(
     [$product['id'], $product['category_id']]
 );
 
-$whatsappMsg = "🙏 Namaste, I would like to order:\n\nProduct: {$product['name']}\nPrice: ₹{$product['price']}\n\nPlease share the ordering details.";
+$whatsappMsg = !empty($product['whatsapp_message']) ? $product['whatsapp_message'] : "🙏 Namaste, I would like to order:\n\nProduct: {$product['name']}\nPrice: ₹{$product['price']}\n\nPlease share the ordering details.";
+$whatsappLink = getWhatsAppLink($whatsappMsg, $product['whatsapp_number']);
 
 include BASE_PATH . '/includes/header.php';
 include BASE_PATH . '/includes/navbar.php';
@@ -80,7 +81,7 @@ include BASE_PATH . '/includes/navbar.php';
                 <?php endif; ?>
                 
                 <div class="d-flex gap-3 flex-wrap">
-                    <a href="<?= e(getWhatsAppLink($whatsappMsg)) ?>" target="_blank" class="btn btn-lg" style="background:#25D366; color:white; border-radius:var(--radius-lg);">
+                    <a href="<?= e($whatsappLink) ?>" target="_blank" class="btn btn-lg" style="background:#25D366; color:white; border-radius:var(--radius-lg);">
                         <i class="bi bi-whatsapp me-2"></i> Order on WhatsApp
                     </a>
                     <a href="<?= SITE_URL ?>/contact.php" class="btn btn-outline-custom btn-lg">

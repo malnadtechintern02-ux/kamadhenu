@@ -5,15 +5,83 @@
  */
 
 require_once __DIR__ . '/includes/admin-auth.php';
+require_once BASE_PATH . '/includes/upload.php';
 
 $pageTitle = 'Website Settings';
 
 if (isPost()) {
     requireCsrfToken();
     
+    // Handle About Image upload
+    if (isset($_FILES['about_image']) && $_FILES['about_image']['error'] === UPLOAD_ERR_OK) {
+        $uploadResult = handleFileUpload('about_image', 'about');
+        if ($uploadResult['success']) {
+            $filename = $uploadResult['filename'];
+            
+            $oldImage = getSetting('about_image');
+            if (!empty($oldImage)) {
+                deleteUploadedFile('about/' . $oldImage);
+            }
+            
+            $existingAboutImg = dbFetchOne("SELECT id FROM settings WHERE `setting_key` = ?", ['about_image']);
+            if ($existingAboutImg) {
+                dbUpdate('settings', ['setting_value' => $filename], '`setting_key` = ?', ['about_image']);
+            } else {
+                dbInsert('settings', ['setting_key' => 'about_image', 'setting_value' => $filename]);
+            }
+        }
+    }
+    
+    // Process multiple WhatsApp numbers
+    $whatsappNumbers = [];
+    $activeVal = '';
+    
+    if (isset($_POST['whatsapp_numbers_list']) && is_array($_POST['whatsapp_numbers_list'])) {
+        $labels = $_POST['whatsapp_labels'] ?? [];
+        $activeIdx = $_POST['whatsapp_active'] ?? '0';
+        
+        foreach ($_POST['whatsapp_numbers_list'] as $idx => $num) {
+            $num = trim($num);
+            if (empty($num)) continue;
+            
+            $label = trim($labels[$idx] ?? 'WhatsApp');
+            $isActive = ($activeIdx == $idx);
+            
+            $whatsappNumbers[] = [
+                'label' => $label,
+                'number' => $num,
+                'is_active' => $isActive
+            ];
+            
+            if ($isActive) {
+                $activeVal = $num;
+            }
+        }
+    }
+    
+    if (empty($activeVal) && !empty($whatsappNumbers)) {
+        $whatsappNumbers[0]['is_active'] = true;
+        $activeVal = $whatsappNumbers[0]['number'];
+    }
+    
+    $jsonVal = json_encode($whatsappNumbers);
+    $existingNumbers = dbFetchOne("SELECT id FROM settings WHERE `setting_key` = ?", ['whatsapp_numbers']);
+    if ($existingNumbers) {
+        dbUpdate('settings', ['setting_value' => $jsonVal], '`setting_key` = ?', ['whatsapp_numbers']);
+    } else {
+        dbInsert('settings', ['setting_key' => 'whatsapp_numbers', 'setting_value' => $jsonVal]);
+    }
+    
+    $existingWhatsapp = dbFetchOne("SELECT id FROM settings WHERE `setting_key` = ?", ['whatsapp']);
+    if ($existingWhatsapp) {
+        dbUpdate('settings', ['setting_value' => $activeVal], '`setting_key` = ?', ['whatsapp']);
+    } else {
+        dbInsert('settings', ['setting_key' => 'whatsapp', 'setting_value' => $activeVal]);
+    }
+    
     $keys = [
         'site_name', 'site_tagline', 'site_description', 'phone', 'email', 
-        'address', 'whatsapp', 'facebook_url', 'instagram_url', 'youtube_url', 
+        'address', 'whatsapp_floating_enabled', 'whatsapp_default_msg', 'facebook_url', 'instagram_url', 'youtube_url', 
         'google_maps_url', 'footer_text', 'stat_total_cows', 'stat_rescued_cows', 
         'stat_seva_programs', 'stat_years_service', 'bank_account_name', 
         'bank_name', 'bank_account_number', 'bank_ifsc', 'upi_id', 'upi_qr_code'
@@ -57,7 +125,7 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
     </div>
 </div>
 
-<form method="POST" action="">
+<form method="POST" action="" enctype="multipart/form-data">
     <?= csrfField() ?>
     
     <!-- General & Branding -->
@@ -80,6 +148,18 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
                 <label class="form-label fw-semibold">Footer About Text</label>
                 <textarea name="footer_text" rows="2" class="form-control"><?= e(settingVal('footer_text')) ?></textarea>
             </div>
+            <div class="col-12">
+                <label class="form-label fw-semibold">About Page Image</label>
+                <input type="file" name="about_image" class="form-control" accept="image/*">
+                <div class="form-text">Choose a custom image for the About Us page section (Recommended landscape aspect ratio e.g. 600x450).</div>
+                <?php 
+                $aboutImg = getSetting('about_image');
+                $aboutImgUrl = !empty($aboutImg) ? getUploadUrl('about/' . $aboutImg) : ASSETS_URL . '/images/about/goushala-about.jpg';
+                ?>
+                <div class="mt-2">
+                    <img src="<?= e($aboutImgUrl) ?>" alt="Current About Image" class="img-thumbnail" style="max-height: 150px;">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -95,9 +175,64 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
                 <label class="form-label fw-semibold">Official Email</label>
                 <input type="email" name="email" class="form-control" value="<?= e(settingVal('email')) ?>">
             </div>
+            <div class="col-md-12">
+                <label class="form-label fw-semibold">WhatsApp Numbers List (Select Radio to set site default active number)</label>
+                <div id="whatsapp-list-container" class="mb-2">
+                    <?php 
+                    $numbersJson = settingVal('whatsapp_numbers', '[]');
+                    $numbers = json_decode($numbersJson, true);
+                    if (!is_array($numbers)) {
+                        $numbers = [];
+                    }
+                    
+                    if (empty($numbers) && !empty(settingVal('whatsapp'))) {
+                        $numbers[] = [
+                            'label' => 'Primary',
+                            'number' => settingVal('whatsapp'),
+                            'is_active' => true
+                        ];
+                    }
+                    
+                    if (empty($numbers)) {
+                        $numbers[] = [
+                            'label' => 'Primary',
+                            'number' => '',
+                            'is_active' => true
+                        ];
+                    }
+                    
+                    foreach ($numbers as $idx => $item):
+                    ?>
+                    <div class="row g-2 align-items-center whatsapp-row mb-2">
+                        <div class="col-auto text-center" style="width: 40px;">
+                            <input type="radio" name="whatsapp_active" value="<?= $idx ?>" class="form-check-input" <?= $item['is_active'] ? 'checked' : '' ?> title="Select as Active Default" style="transform: scale(1.2);">
+                        </div>
+                        <div class="col">
+                            <input type="text" name="whatsapp_labels[]" class="form-control form-control-sm" value="<?= e($item['label']) ?>" placeholder="Label (e.g. Sales, Support)" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" name="whatsapp_numbers_list[]" class="form-control form-control-sm" value="<?= e($item['number']) ?>" placeholder="Number (with country code e.g. +91...)" required>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-danger btn-sm remove-num-btn"><i class="bi bi-trash"></i></button>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+                <button type="button" id="add-whatsapp-btn" class="btn btn-outline-primary btn-sm mb-3">
+                    <i class="bi bi-plus-lg me-1"></i> Add New Number
+                </button>
+            </div>
             <div class="col-md-6">
-                <label class="form-label fw-semibold">WhatsApp Number (with country code)</label>
-                <input type="text" name="whatsapp" class="form-control" value="<?= e(settingVal('whatsapp')) ?>" placeholder="+919876543210">
+                <label class="form-label fw-semibold">Show WhatsApp Floating Button on Site</label>
+                <select name="whatsapp_floating_enabled" class="form-select">
+                    <option value="1" <?= settingVal('whatsapp_floating_enabled', '1') === '1' ? 'selected' : '' ?>>Enabled</option>
+                    <option value="0" <?= settingVal('whatsapp_floating_enabled', '1') === '0' ? 'selected' : '' ?>>Disabled</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label class="form-label fw-semibold">Default WhatsApp Chat Message</label>
+                <input type="text" name="whatsapp_default_msg" class="form-control" value="<?= e(settingVal('whatsapp_default_msg', '🙏 Namaste, I would like to support Gau Seva.')) ?>" placeholder="Message populated when user clicks WhatsApp link">
             </div>
             <div class="col-md-6">
                 <label class="form-label fw-semibold">Google Maps Embed URL (Iframe Src)</label>
@@ -185,5 +320,61 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
         </button>
     </div>
 </form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('whatsapp-list-container');
+    const addButton = document.getElementById('add-whatsapp-btn');
+    
+    addButton.addEventListener('click', function() {
+        const rows = container.querySelectorAll('.whatsapp-row');
+        const nextIndex = rows.length;
+        
+        const newRow = document.createElement('div');
+        newRow.className = 'row g-2 align-items-center whatsapp-row mb-2';
+        newRow.innerHTML = `
+            <div class="col-auto text-center" style="width: 40px;">
+                <input type="radio" name="whatsapp_active" value="${nextIndex}" class="form-check-input" ${nextIndex === 0 ? 'checked' : ''} title="Select as Active Default" style="transform: scale(1.2);">
+            </div>
+            <div class="col">
+                <input type="text" name="whatsapp_labels[]" class="form-control form-control-sm" value="" placeholder="Label (e.g. Sales, Support)" required>
+            </div>
+            <div class="col">
+                <input type="text" name="whatsapp_numbers_list[]" class="form-control form-control-sm" value="" placeholder="Number (with country code e.g. +91...)" required>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-danger btn-sm remove-num-btn"><i class="bi bi-trash"></i></button>
+            </div>
+        `;
+        container.appendChild(newRow);
+        attachRemoveEvent(newRow.querySelector('.remove-num-btn'));
+    });
+    
+    function attachRemoveEvent(button) {
+        button.addEventListener('click', function() {
+            const rows = container.querySelectorAll('.whatsapp-row');
+            if (rows.length <= 1) {
+                alert('At least one WhatsApp number is required.');
+                return;
+            }
+            const row = button.closest('.whatsapp-row');
+            const wasChecked = row.querySelector('input[type="radio"]').checked;
+            row.remove();
+            
+            // Re-index all radio buttons
+            const remainingRows = container.querySelectorAll('.whatsapp-row');
+            remainingRows.forEach((r, idx) => {
+                const radio = r.querySelector('input[type="radio"]');
+                radio.value = idx;
+                if (wasChecked && idx === 0) {
+                    radio.checked = true;
+                }
+            });
+        });
+    }
+    
+    container.querySelectorAll('.remove-num-btn').forEach(attachRemoveEvent);
+});
+</script>
 
 <?php require_once __DIR__ . '/includes/admin-footer.php'; ?>

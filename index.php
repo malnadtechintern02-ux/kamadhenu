@@ -67,6 +67,23 @@ $statRescuedCows = getSetting('stat_rescued_cows', '45');
 $statSevaPrograms = getSetting('stat_seva_programs', '8');
 $statYearsService = getSetting('stat_years_service', '6');
 
+// Hero Section Settings
+$heroBgPath = getSetting('hero_bg');
+$heroBgUrl = !empty($heroBgPath) ? getUploadUrl('hero/' . $heroBgPath) : ASSETS_URL . '/images/hero/hero-bg.jpg';
+$heroBadge = getSetting('hero_badge', '🙏 Vande Gou Mataram');
+$heroTitle = getSetting('hero_title', "Protecting Gau Mata.\nPreserving Our Heritage.");
+$heroSubtitle = getSetting('hero_subtitle', 'Serving indigenous cows with compassion, care and devotion at Kamadhenu Goushala, nestled in the sacred lands of Kodagu, Karnataka.');
+$heroBtn1Text = getSetting('hero_btn1_text', 'Donate Now');
+$heroBtn1Url = getSetting('hero_btn1_url', '/donate.php');
+$heroBtn2Text = getSetting('hero_btn2_text', 'Adopt a Cow');
+$heroBtn2Url = getSetting('hero_btn2_url', '/adopt-a-cow.php');
+
+$aboutImage = getSetting('about_image');
+$aboutImageUrl = !empty($aboutImage) ? getUploadUrl('about/' . $aboutImage) : ASSETS_URL . '/images/about/goushala-about.jpg';
+
+$btn1Url = (str_starts_with($heroBtn1Url, 'http') || str_starts_with($heroBtn1Url, '#')) ? $heroBtn1Url : SITE_URL . '/' . ltrim($heroBtn1Url, '/');
+$btn2Url = (str_starts_with($heroBtn2Url, 'http') || str_starts_with($heroBtn2Url, '#')) ? $heroBtn2Url : SITE_URL . '/' . ltrim($heroBtn2Url, '/');
+
 // Include layout
 include BASE_PATH . '/includes/header.php';
 include BASE_PATH . '/includes/navbar.php';
@@ -76,7 +93,7 @@ include BASE_PATH . '/includes/navbar.php';
      HERO SECTION
      ============================================================ -->
 <section class="hero-section animate-fade-slide delay-100" id="heroSection">
-    <div class="hero-bg" style="background-image: url('<?= ASSETS_URL ?>/images/hero/hero-bg.jpg');"></div>
+    <div class="hero-bg" style="background-image: url('<?= e($heroBgUrl) ?>');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-shapes">
         <div class="shape shape-1"></div>
@@ -84,16 +101,22 @@ include BASE_PATH . '/includes/navbar.php';
         <div class="shape shape-3"></div>
     </div>
     <div class="hero-content">
-        <div class="hero-badge">🙏 Vande Gou Mataram</div>
-        <h1 class="hero-title">Protecting Gau Mata.<br>Preserving Our Heritage.</h1>
-        <p class="hero-subtitle">Serving indigenous cows with compassion, care and devotion at Kamadhenu Goushala, nestled in the sacred lands of Kodagu, Karnataka.</p>
+        <?php if (!empty($heroBadge)): ?>
+        <div class="hero-badge"><?= e($heroBadge) ?></div>
+        <?php endif; ?>
+        <h1 class="hero-title"><?= nl2br(e($heroTitle)) ?></h1>
+        <p class="hero-subtitle"><?= e($heroSubtitle) ?></p>
         <div class="hero-buttons">
-            <a href="<?= SITE_URL ?>/donate.php" class="btn btn-donate btn-lg animate-fade-slide delay-100">
-                <i class="bi bi-heart-fill me-2"></i>Donate Now
+            <?php if (!empty($heroBtn1Text)): ?>
+            <a href="<?= e($btn1Url) ?>" class="btn btn-donate btn-lg animate-fade-slide delay-100">
+                <i class="bi bi-heart-fill me-2"></i><?= e($heroBtn1Text) ?>
             </a>
-            <a href="<?= SITE_URL ?>/adopt-a-cow.php" class="btn btn-outline-light btn-lg animate-fade-slide delay-100">
-                <i class="bi bi-house-heart me-2"></i>Adopt a Cow
+            <?php endif; ?>
+            <?php if (!empty($heroBtn2Text)): ?>
+            <a href="<?= e($btn2Url) ?>" class="btn btn-outline-light btn-lg animate-fade-slide delay-100">
+                <i class="bi bi-house-heart me-2"></i><?= e($heroBtn2Text) ?>
             </a>
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -146,7 +169,7 @@ include BASE_PATH . '/includes/navbar.php';
         <div class="row align-items-center g-5">
             <div class="col-lg-6 animate-on-scroll fade-left">
                 <div class="about-image-wrapper">
-                    <img src="<?= ASSETS_URL ?>/images/about/goushala-about.jpg" 
+                    <img src="<?= e($aboutImageUrl) ?>" 
                          alt="Kamadhenu Goushala" 
                          loading="lazy"
                          onerror="this.src='<?= getPlaceholderImage('Kamadhenu Goushala', 600, 450) ?>'">
@@ -480,9 +503,17 @@ include BASE_PATH . '/includes/navbar.php';
                         <h3 class="card-title mt-1"><?= e($product['name']) ?></h3>
                         <p class="product-price mb-2"><?= formatCurrency($product['price']) ?></p>
                         <p class="card-text small"><?= e(truncateText($product['description'] ?? '', 80)) ?></p>
-                        <a href="<?= SITE_URL ?>/product-details.php?slug=<?= e($product['slug']) ?>" class="btn btn-outline-custom btn-sm mt-auto w-100">
-                            View Details
-                        </a>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="<?= SITE_URL ?>/product-details.php?slug=<?= e($product['slug']) ?>" class="btn btn-outline-custom btn-sm flex-fill">View Details</a>
+                            <?php 
+                            $prodMsg = !empty($product['whatsapp_message']) ? $product['whatsapp_message'] : '🙏 Namaste, I am interested in: ' . $product['name'] . ' (₹' . $product['price'] . '). Please share details.';
+                            $waLink = getWhatsAppLink($prodMsg, $product['whatsapp_number']);
+                            ?>
+                            <a href="<?= e($waLink) ?>" 
+                               target="_blank" class="btn btn-sm flex-shrink-0" style="background:#25D366; color:white; border-radius:var(--radius-md);">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -90,7 +90,11 @@ include BASE_PATH . '/includes/navbar.php';
                         <p class="card-text small"><?= e(truncateText($product['description'] ?? '', 80)) ?></p>
                         <div class="d-flex gap-2 mt-auto">
                             <a href="<?= SITE_URL ?>/product-details.php?slug=<?= e($product['slug']) ?>" class="btn btn-outline-custom btn-sm flex-fill">View Details</a>
-                            <a href="<?= e(getWhatsAppLink('🙏 Namaste, I am interested in: ' . $product['name'] . ' (₹' . $product['price'] . '). Please share details.')) ?>" 
+                            <?php 
+                            $prodMsg = !empty($product['whatsapp_message']) ? $product['whatsapp_message'] : '🙏 Namaste, I am interested in: ' . $product['name'] . ' (₹' . $product['price'] . '). Please share details.';
+                            $waLink = getWhatsAppLink($prodMsg, $product['whatsapp_number']);
+                            ?>
+                            <a href="<?= e($waLink) ?>" 
                                target="_blank" class="btn btn-sm flex-shrink-0" style="background:#25D366; color:white; border-radius:var(--radius-md);">
                                 <i class="bi bi-whatsapp"></i>
                             </a>

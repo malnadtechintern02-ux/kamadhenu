@@ -6,11 +6,19 @@
 
 $siteName = getSetting('site_name', 'Kamadenu Goushala');
 $footerText = getSetting('footer_text', 'Dedicated to protecting and serving Gau Mata with devotion.');
-$phone = getSetting('phone', '[PHONE NUMBER]');
-$email = getSetting('email', '[EMAIL ADDRESS]');
+$phone = getSetting('phone');
+if (empty($phone) || $phone === '[PHONE NUMBER]') {
+    $phone = '6763887630';
+}
+$email = getSetting('email');
+if (empty($email) || $email === '[EMAIL ADDRESS]') {
+    $email = 'sharath234@gmail.com';
+}
 $address = getSetting('address', '[GOUSHALA ADDRESS]');
 $whatsapp = getSetting('whatsapp', '');
-$whatsappLink = getWhatsAppLink('🙏 Namaste, I would like to support Gau Seva.');
+$whatsappFloating = getSetting('whatsapp_floating_enabled', '1');
+$whatsappDefaultMsg = getSetting('whatsapp_default_msg', '🙏 Namaste, I would like to support Gau Seva.');
+$whatsappLink = getWhatsAppLink($whatsappDefaultMsg);
 $currentYear = date('Y');
 ?>
 
@@ -38,7 +46,7 @@ $currentYear = date('Y');
     <div class="container">
         <div class="row g-4">
             <!-- About Column -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="footer-brand">
                     <div class="d-flex align-items-center mb-3">
                         <img src="<?= ASSETS_URL ?>/images/logo-icon.png" alt="<?= e($siteName) ?>" class="footer-brand-logo me-2" width="44" height="44">
@@ -87,7 +95,7 @@ $currentYear = date('Y');
             </div>
             
             <!-- Contact Info -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 col-6">
                 <h4 class="footer-heading">Contact Us</h4>
                 <ul class="footer-contact">
                     <li>
@@ -140,7 +148,12 @@ $currentYear = date('Y');
     </div>
 </footer>
 
-
+<?php if ($whatsapp && $whatsappFloating === '1'): ?>
+<!-- WhatsApp Floating Button -->
+<a href="<?= e($whatsappLink) ?>" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+<?php endif; ?>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">

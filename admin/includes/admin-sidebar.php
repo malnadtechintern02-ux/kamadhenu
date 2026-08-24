@@ -126,6 +126,11 @@ function isAdminActive(string $page): string {
             <li class="sidebar-heading">System</li>
             
             <li class="nav-item">
+                <a class="nav-link <?= isAdminActive('hero-settings') ?>" href="<?= ADMIN_URL ?>/hero-settings.php">
+                    <i class="bi bi-image"></i><span>Hero Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link <?= isAdminActive('settings') ?>" href="<?= ADMIN_URL ?>/settings.php">
                     <i class="bi bi-gear-fill"></i><span>Settings</span>
                 </a>

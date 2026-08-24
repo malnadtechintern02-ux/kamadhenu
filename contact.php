@@ -58,8 +58,14 @@ if (isPost()) {
     }
 }
 
-$phone = getSetting('phone', '[PHONE NUMBER]');
-$email = getSetting('email', '[EMAIL ADDRESS]');
+$phone = getSetting('phone');
+if (empty($phone) || $phone === '[PHONE NUMBER]') {
+    $phone = '6763887630';
+}
+$email = getSetting('email');
+if (empty($email) || $email === '[EMAIL ADDRESS]') {
+    $email = 'sharath234@gmail.com';
+}
 $address = getSetting('address', '[GOUSHALA ADDRESS]');
 $whatsapp = getSetting('whatsapp', '');
 $mapsUrl = getSetting('google_maps_url', '');
@@ -102,10 +108,12 @@ include BASE_PATH . '/includes/navbar.php';
                             <i class="bi bi-envelope-fill me-3 fs-4"></i>
                             <a href="mailto:<?= e($email) ?>" class="text-white opacity-75 text-decoration-none hover-gold"><?= e($email) ?></a>
                         </li>
-                        <?php if ($whatsapp): ?>
+                        <?php if ($whatsapp): 
+                            $whatsappDefaultMsg = getSetting('whatsapp_default_msg', '🙏 Namaste, I would like to support Gau Seva.');
+                        ?>
                         <li class="d-flex align-items-center">
                             <i class="bi bi-whatsapp me-3 fs-4"></i>
-                            <a href="<?= e(getWhatsAppLink('🙏 Namaste, I would like to contact Kamadhenu Goushala.')) ?>" target="_blank" class="text-white opacity-75 text-decoration-none hover-gold">WhatsApp Chat</a>
+                            <a href="<?= e(getWhatsAppLink($whatsappDefaultMsg)) ?>" target="_blank" class="text-white opacity-75 text-decoration-none hover-gold">WhatsApp Chat</a>
                         </li>
                         <?php endif; ?>
                     </ul>
