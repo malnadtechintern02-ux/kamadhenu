@@ -66,11 +66,25 @@ include BASE_PATH . '/includes/navbar.php';
         <?php else: ?>
         <div class="gallery-grid">
             <?php foreach ($images as $img): ?>
+            <?php
+            $imgUrl = '';
+            if (str_starts_with($img['image_path'], '../cows/')) {
+                $imgUrl = getUploadUrl('cows/' . str_replace('../cows/', '', $img['image_path']));
+            } elseif (str_starts_with($img['image_path'], '../breeds/')) {
+                $imgUrl = getUploadUrl('breeds/' . str_replace('../breeds/', '', $img['image_path']));
+            } elseif (str_starts_with($img['image_path'], '../events/')) {
+                $imgUrl = getUploadUrl('events/' . str_replace('../events/', '', $img['image_path']));
+            } elseif (str_starts_with($img['image_path'], '../news/')) {
+                $imgUrl = getUploadUrl('news/' . str_replace('../news/', '', $img['image_path']));
+            } else {
+                $imgUrl = getUploadUrl('gallery/' . $img['image_path']);
+            }
+            ?>
             <div class="gallery-item animate-on-scroll" 
-                 data-gallery="<?= getUploadUrl('gallery/' . $img['image_path']) ?>" 
+                 data-gallery="<?= $imgUrl ?>" 
                  data-caption="<?= e($img['caption'] ?? '') ?>"
                  data-filter-category="<?= e($img['category_slug'] ?? '') ?>">
-                <img src="<?= getUploadUrl('gallery/' . $img['image_path'], getPlaceholderImage($img['caption'] ?? 'Gallery', 300, 300)) ?>" 
+                <img src="<?= $imgUrl ?>" 
                      alt="<?= e($img['alt_text'] ?? $img['caption'] ?? 'Goushala gallery') ?>" loading="lazy"
                      onerror="this.src='<?= getPlaceholderImage($img['caption'] ?? 'Gallery', 300, 300) ?>'">
                 <div class="gallery-overlay">
