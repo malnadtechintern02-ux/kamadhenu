@@ -15,104 +15,19 @@ $seo = [
 $categories = dbFetchAll("SELECT * FROM gallery_categories WHERE is_active = 1 ORDER BY sort_order ASC");
 $activeCategory = getParam('category', 'all');
 
-$sql = "
-SELECT * FROM (
-    SELECT 
-        'gallery' as source,
-        g.id,
-        g.image_path,
-        g.caption,
-        g.alt_text,
-        g.category_id,
-        gc.name as category_name,
-        gc.slug as category_slug,
-        g.sort_order,
-        g.created_at
-    FROM gallery g
-    LEFT JOIN gallery_categories gc ON g.category_id = gc.id
-    WHERE g.is_active = 1
-
-    UNION ALL
-
-    SELECT 
-        'cow' as source,
-        c.id,
-        CONCAT('../cows/', c.photo) as image_path,
-        CONCAT(c.name, ' - ', COALESCE(b.name, 'Indigenous'), ' Breed') as caption,
-        c.name as alt_text,
-        gc.id as category_id,
-        gc.name as category_name,
-        gc.slug as category_slug,
-        100 as sort_order,
-        c.created_at
-    FROM cows c
-    LEFT JOIN breeds b ON c.breed_id = b.id
-    CROSS JOIN (SELECT id, name, slug FROM gallery_categories WHERE slug = 'our-cows' LIMIT 1) gc
-    WHERE c.photo IS NOT NULL AND c.photo != ''
-
-    UNION ALL
-
-    SELECT 
-        'breed' as source,
-        br.id,
-        CONCAT('../breeds/', br.image) as image_path,
-        CONCAT(br.name, ' Breed') as caption,
-        br.name as alt_text,
-        gc.id as category_id,
-        gc.name as category_name,
-        gc.slug as category_slug,
-        110 as sort_order,
-        br.created_at
-    FROM breeds br
-    CROSS JOIN (SELECT id, name, slug FROM gallery_categories WHERE slug = 'goushala' LIMIT 1) gc
-    WHERE br.image IS NOT NULL AND br.image != '' AND br.is_active = 1
-
-    UNION ALL
-
-    SELECT 
-        'event' as source,
-        ev.id,
-        CONCAT('../events/', ev.image) as image_path,
-        ev.title as caption,
-        ev.title as alt_text,
-        gc.id as category_id,
-        gc.name as category_name,
-        gc.slug as category_slug,
-        120 as sort_order,
-        ev.created_at
-    FROM events ev
-    CROSS JOIN (SELECT id, name, slug FROM gallery_categories WHERE slug = 'events' LIMIT 1) gc
-    WHERE ev.image IS NOT NULL AND ev.image != ''
-
-    UNION ALL
-
-    SELECT 
-        'news' as source,
-        nw.id,
-        CONCAT('../news/', nw.featured_image) as image_path,
-        nw.title as caption,
-        nw.title as alt_text,
-        gc.id as category_id,
-        gc.name as category_name,
-        gc.slug as category_slug,
-        130 as sort_order,
-        nw.created_at
-    FROM news nw
-    CROSS JOIN (SELECT id, name, slug FROM gallery_categories WHERE slug = 'goushala' LIMIT 1) gc
-    WHERE nw.featured_image IS NOT NULL AND nw.featured_image != '' AND nw.status = 'Published'
-) AS aggregated_gallery
-";
-
-$where = "1=1";
+$where = "g.is_active = 1";
 $params = [];
 if ($activeCategory !== 'all') {
-    $where .= " AND category_slug = ?";
+    $where .= " AND gc.slug = ?";
     $params[] = $activeCategory;
 }
 
-$sql .= " WHERE {$where} ORDER BY sort_order ASC, created_at DESC";
-
-$images = dbFetchAll($sql, $params);
+$images = dbFetchAll(
+    "SELECT g.*, gc.name as category_name, gc.slug as category_slug FROM gallery g 
+     LEFT JOIN gallery_categories gc ON g.category_id = gc.id 
+     WHERE {$where} ORDER BY g.sort_order ASC, g.created_at DESC",
+    $params
+);
 
 include BASE_PATH . '/includes/header.php';
 include BASE_PATH . '/includes/navbar.php';
