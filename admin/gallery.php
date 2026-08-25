@@ -32,6 +32,15 @@ require_once __DIR__ . '/includes/admin-header.php';
 require_once __DIR__ . '/includes/admin-sidebar.php';
 ?>
 
+<style>
+.img-zoom {
+    transition: transform 0.25s ease;
+}
+.img-zoom:hover {
+    transform: scale(1.06);
+}
+</style>
+
 <div class="d-flex align-items-center justify-content-between mb-4">
     <div>
         <h2 class="h4 mb-0 fw-bold">Photo Gallery</h2>
@@ -53,9 +62,11 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
         <div class="col-6 col-md-4 col-lg-3">
             <div class="card h-100 border-0 shadow-sm rounded-3 overflow-hidden">
                 <div style="aspect-ratio: 1; overflow: hidden; background: #eee; position: relative;">
-                    <img src="<?= getUploadUrl('gallery/' . $p['image_path'], getPlaceholderImage($p['caption'] ?? 'Photo', 250, 250)) ?>" 
-                         alt="<?= e($p['caption'] ?? '') ?>" class="w-100 h-100" style="object-fit: cover;"
-                         onerror="this.src='<?= getPlaceholderImage($p['caption'] ?? 'Photo', 250, 250) ?>'">
+                    <a href="<?= getUploadUrl('gallery/' . $p['image_path']) ?>" target="_blank" title="View Full Image">
+                        <img src="<?= getUploadUrl('gallery/' . $p['image_path'], getPlaceholderImage($p['caption'] ?? 'Photo', 250, 250)) ?>" 
+                             alt="<?= e($p['caption'] ?? '') ?>" class="w-100 h-100 img-zoom" style="object-fit: cover;"
+                             onerror="this.src='<?= getPlaceholderImage($p['caption'] ?? 'Photo', 250, 250) ?>'">
+                    </a>
                     <span class="badge bg-dark bg-opacity-75 position-absolute top-0 start-0 m-2 small">
                         <?= e($p['category_name'] ?? 'General') ?>
                     </span>
