@@ -9,7 +9,7 @@ USE `kamadhenu_goushala`;
 -- ADMIN (password: admin123)
 -- ============================================================
 INSERT INTO `admins` (`username`, `email`, `password_hash`, `full_name`) VALUES
-('admin', 'admin@kamadenugoushala.org', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrator');
+('admin', 'admin@kamadenugoushala.org', '$2y$10$3D/pmN32lvORT5g636SlxOshUolvSXf4d3k/fYMfcxb4UOtYGs/su', 'Administrator');
 
 -- ============================================================
 -- SETTINGS
