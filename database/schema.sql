@@ -295,6 +295,8 @@ CREATE TABLE `products` (
     `description` TEXT DEFAULT NULL,
     `price` DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     `image` VARCHAR(255) DEFAULT NULL,
+    `whatsapp_number` VARCHAR(30) DEFAULT NULL,
+    `whatsapp_message` TEXT DEFAULT NULL,
     `category_id` INT UNSIGNED DEFAULT NULL,
     `stock_status` ENUM('In Stock', 'Out of Stock', 'Pre-Order') NOT NULL DEFAULT 'In Stock',
     `is_featured` TINYINT(1) NOT NULL DEFAULT 0,
