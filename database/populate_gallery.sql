@@ -15,7 +15,7 @@ SELECT
     1 as is_active
 FROM cows c
 LEFT JOIN breeds b ON c.breed_id = b.id
-WHERE c.photo IS NOT NULL AND c.photo != '' AND c.id != 6
+WHERE c.photo IS NOT NULL AND c.photo != ''
   AND NOT EXISTS (
       SELECT 1 FROM gallery WHERE image_path = CONCAT('../cows/', c.photo)
   );

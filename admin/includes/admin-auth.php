@@ -8,3 +8,4 @@ define('BASE_PATH', dirname(__DIR__, 2));
 define('IS_ADMIN', true);
 require_once BASE_PATH . '/config/config.php';
 requireAdmin();
+require_once BASE_PATH . '/includes/upload.php';
