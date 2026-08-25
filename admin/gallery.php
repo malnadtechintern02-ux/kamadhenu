@@ -36,7 +36,6 @@ SELECT * FROM (
         g.created_at
     FROM gallery g
     LEFT JOIN gallery_categories gc ON g.category_id = gc.id
-    WHERE g.is_active = 1
 
     UNION ALL
 
@@ -137,6 +136,7 @@ require_once __DIR__ . '/includes/admin-sidebar.php';
         switch ($p['source']) {
             case 'gallery':
                 $imgUrl = getUploadUrl('gallery/' . $p['image_path']);
+                $editUrl = ADMIN_URL . '/gallery-edit.php?id=' . $p['id'];
                 $isDeletable = true;
                 $sourceLabel = 'Showcase';
                 break;
